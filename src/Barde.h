@@ -521,7 +521,7 @@ namespace Compose
     std::string End(Player* player);                // makes the composition; an error text on failure
     std::string Delete(Player* player, uint32 songId);          // a composition of one's own, or a learned one (forgotten)
 
-    // A scroll of a song: copying one of one's compositions onto a scroll (1 Light Parchment, 1 Moonglow Ink), reading it to learn the song.
+    // A scroll of a song: copying one of one's compositions onto a scroll (1 Light Parchment), reading it to learn the song.
     constexpr uint32 SCROLL_ITEM = 1950040;
     std::string Copy(Player* player, uint32 songId);
     std::string Read(Player* player, Item* scroll);            // learns the song; the caller then uses the scroll up

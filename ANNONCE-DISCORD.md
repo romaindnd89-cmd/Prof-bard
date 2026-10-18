@@ -112,7 +112,7 @@ Un barde défie un autre barde sur le même air devant un public : le **meilleur
 **✍️ Composer**
 - On **enregistre** ce qu'on joue (au moins 16 notes et 20 secondes), puis on le **compose** : le serveur place les notes sur une grille et fixe le niveau de l'air. L'air apparaît dans **« Mes créations »**.
 - Un air composé (le sien ou acheté) **ne donne ni chant, ni compétence, ni malus** : on le joue pour le plaisir, le score et les concerts.
-- On peut **copier un air sur un parchemin d'air** (1 parchemin léger + 1 encre) pour le **partager** : à donner ou à vendre. Le parchemin est à **usage unique** : le lire apprend l'air au lecteur (il va dans « Custom ») et le consomme. Une musique reproduite ou composée peut ainsi circuler de joueur en joueur, et chacun la rejoue ou la fait écouter à tous.
+- On peut **copier un air sur un parchemin d'air** (1 parchemin léger) pour le **partager** : à donner ou à vendre. Le parchemin est à **usage unique** : le lire apprend l'air au lecteur (il va dans « Custom ») et le consomme. Une musique reproduite ou composée peut ainsi circuler de joueur en joueur, et chacun la rejoue ou la fait écouter à tous.
 
 ### Message 8/9 : titres et spécialités
 
@@ -135,7 +135,7 @@ Un barde défie un autre barde sur le même air devant un public : le **meilleur
 **🌟 La quête « des Mille Voix »**
 Un **instrument légendaire** : chant **x1,2**, **jamais désaccordé**, **lié à l'âme** (impossible à échanger, vendre ou acheter), et **un seul par personnage, pour toujours**. On choisit lequel de ses instruments d'arcanite épiques le devient. Cinq épreuves, toutes difficiles :
 1. **Maîtrise or et un passage à 100 %** sur les **40 airs** du carnet ;
-2. remettre **10 barres d'arcanite, 5 essences d'eau et 1 braise vivante** ;
+2. remettre **10 barres d'arcanite, 5 essences d'eau et 1 Cœur de feu** ;
 3. **battre un virtuose en duel** ;
 4. jouer un air de Grand barde en **trio parfait** : trois bardes, **100 % chacun** ;
 5. **forger** l'instrument d'arcanite épique choisi.
@@ -240,7 +240,7 @@ A bard challenges another on the same song in front of an audience: the **best s
 **✍️ Composing**
 - **Record** what you play (at least 16 notes and 20 seconds), then **compose** it: the server places the notes on a grid and sets the song's level. The song appears in **"My creations"**.
 - A composed song (yours or bought) gives **no chant, no skill and no malus**: it is played for pleasure, score and concerts.
-- You can **copy a song onto a song scroll** (1 light parchment + 1 ink) to **share** it: give it or sell it. The scroll is **single-use**: reading it teaches the song to the reader (it goes to "Custom") and consumes it. A reproduced or composed piece can thus travel from player to player, and each one replays it or lets everybody hear it.
+- You can **copy a song onto a song scroll** (1 light parchment) to **share** it: give it or sell it. The scroll is **single-use**: reading it teaches the song to the reader (it goes to "Custom") and consumes it. A reproduced or composed piece can thus travel from player to player, and each one replays it or lets everybody hear it.
 
 ### Message 8/9: titles and specialties
 
@@ -263,7 +263,7 @@ A bard challenges another on the same song in front of an audience: the **best s
 **🌟 The "Quest of a Thousand Voices"**
 A **legendary instrument**: chant **x1.2**, **never out of tune**, **soulbound** (cannot be traded, sold or bought), and **one per character, for ever**. You choose which of your epic arcanite instruments becomes it. Five trials, all hard:
 1. **Gold mastery and a 100 % run** on all **40 songs** of the book;
-2. hand in **10 arcanite bars, 5 essences of water and 1 living ember**;
+2. hand in **10 arcanite bars, 5 essences of water and 1 Heart of Fire**;
 3. **beat a virtuoso in a duel**;
 4. play a Grand Bard song as a **perfect trio**: three bards, **100 % each**;
 5. **forge** the chosen epic arcanite instrument.

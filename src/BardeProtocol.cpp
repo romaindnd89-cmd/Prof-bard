@@ -42,7 +42,7 @@
  *     SCROLLINFO^songId^title^tier^composer      what a scroll holds
  *     TOP^songId^name,score,accuracy‰;...        the five best scores of a song
  *     SPEC^current^minSkill^changeCost          the specialization (0 none) and what it asks
- *     LEGEND^forged^delivered^duel^trio^gold^perfect^total^bars^essences^embers^epicMask   the quest
+ *     LEGEND^forged^delivered^duel^trio^gold^perfect^total^bars^essences^hearts^epicMask   the quest
  *     ENSTATE^ensembleId^phase^songName^bards^averageAccuracy‰^chantGiven^name|state|instrumentId|part|accuracy‰;...   the state of the ensemble (phase 0 waiting, 1 playing, 2 over, 3 cancelled)
  *     DONE^text                                 tuned or keys made (the list is asked again)
  *     CRAFTED^quality                           an instrument was made, of this quality (the list is asked again)

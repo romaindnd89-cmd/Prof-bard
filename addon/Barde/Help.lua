@@ -86,11 +86,11 @@ local TOPICS = {
         frText = "|cffffd100L'improvisation|r\nLe bouton « Impro » ouvre un clavier : jouez librement avec A S D F G H J K (ou la souris). Le menu de l'instrument change le son. Les joueurs proches vous entendent.\n\n"
             .. "|cffffd100Le mode expert|r\nUn clavier de piano complet, de Sol 3 à Do 6 (30 notes) : Z X C V B N M, A S D F G H J K L, Q W, et Maj pour les dièses.\n\n"
             .. "|cffffd100Composer|r\n« Enregistrer » garde vos notes (au moins 16 notes et 20 secondes), « Composer » en fait un air que vous nommez : il apparaît dans « Mes créations ». Un air composé (le vôtre ou acheté) ne donne ni chant, ni compétence, ni malus : on le joue pour le plaisir, le score et les concerts.\n\n"
-            .. "|cffffd100Les parchemins d'air|r\nCopiez un de vos airs sur un parchemin d'air (1 parchemin léger + 1 encre). On le lit pour apprendre l'air, le parchemin est alors consommé. On peut le donner ou le vendre. Les airs appris vont dans « Custom ». Le titre « le Compositeur » récompense votre première composition.",
+            .. "|cffffd100Les parchemins d'air|r\nCopiez un de vos airs sur un parchemin d'air (1 parchemin léger). On le lit pour apprendre l'air, le parchemin est alors consommé. On peut le donner ou le vendre. Les airs appris vont dans « Custom ». Le titre « le Compositeur » récompense votre première composition.",
         enText = "|cffffd100Improvisation|r\nThe \"Impro\" button opens a keyboard: play freely with A S D F G H J K (or the mouse). The instrument menu changes the sound. Nearby players hear you.\n\n"
             .. "|cffffd100Expert mode|r\nA full piano keyboard, from G3 to C6 (30 notes): Z X C V B N M, A S D F G H J K L, Q W, and Shift for sharps.\n\n"
             .. "|cffffd100Composing|r\n\"Record\" keeps your notes (at least 16 notes and 20 seconds), \"Compose\" turns them into a song you name: it appears in \"My creations\". A composed song (yours or bought) gives no chant, no skill and no malus: it is played for pleasure, score and concerts.\n\n"
-            .. "|cffffd100Song scrolls|r\nCopy one of your songs onto a song scroll (1 light parchment + 1 ink). Reading it teaches the song and consumes the scroll. It can be given or sold. Learned songs go to \"Custom\". The title \"the Composer\" rewards your first composition.",
+            .. "|cffffd100Song scrolls|r\nCopy one of your songs onto a song scroll (1 light parchment). Reading it teaches the song and consumes the scroll. It can be given or sold. Learned songs go to \"Custom\". The title \"the Composer\" rewards your first composition.",
     },
     {
         fr = "Titres",

@@ -23,7 +23,7 @@ INSERT INTO `gameobject_template` (`entry`, `type`, `displayId`, `name`, `IconNa
   `AIName`, `ScriptName`, `VerifiedBuild`) VALUES
 (1950403, 10, 323, 'Bourse du barde', 'Speak', '', '', 1, 0, 0, 0, 0, '', 'go_barde_purse', 12340);
 
--- Le parchemin d'air (v0.6) : on copie une de ses compositions (1 Light Parchment, 1 Moonglow Ink), on le lit pour apprendre l'air, et il se vend
+-- Le parchemin d'air (v0.6) : on copie une de ses compositions (1 Light Parchment), on le lit pour apprendre l'air, et il se vend
 -- ou s'échange comme un objet. L'air qu'il porte est inscrit comme amélioration permanente de l'objet (script item_barde_scroll).
 DELETE FROM `item_template` WHERE `entry` = 1950040;
 INSERT INTO `item_template` (`entry`, `class`, `subclass`, `name`, `displayid`, `Quality`, `BuyPrice`, `SellPrice`, `InventoryType`, `ItemLevel`, `RequiredLevel`,

@@ -5,7 +5,7 @@
  * One legendary instrument per character, for ever, bound to the soul: it cannot be traded, sold or bought, there is no other way to
  * have one. The bard chooses which instrument becomes legendary. Five things, all hard:
  *   1. every song of the book played at gold mastery (40 successes) AND once at 100 %;
- *   2. 10 arcanite bars, 5 essences of water and 1 living ember, handed in;
+ *   2. 10 arcanite bars, 5 essences of water and 1 heart of fire, handed in;
  *   3. a duel won against a virtuoso (the title, or the gold mastery of three songs that earns it);
  *   4. a song of the Grand bard level played in a trio of real bards, each of them at 100 %;
  *   5. the forge: the epic arcanite instrument he chooses is consumed and returns legendary.
@@ -27,8 +27,8 @@ namespace
 
 constexpr uint32 ITEM_ARCANITE_BAR = 12360;
 constexpr uint32 ITEM_ESSENCE_OF_WATER = 7080;
-constexpr uint32 ITEM_LIVING_EMBER = 69237;
-constexpr uint32 BARS = 10, ESSENCES = 5, EMBERS = 1;
+constexpr uint32 ITEM_HEART_OF_FIRE = 7077;      // dropped by 51 creatures; the old Living Ember had no source at all
+constexpr uint32 BARS = 10, ESSENCES = 5, HEARTS = 1;
 constexpr uint32 GOLD_WINS = 40;
 constexpr uint32 PERFECT = 1000;                // permille
 
@@ -150,7 +150,7 @@ std::string GmTest(Player* player, std::string const& what)
     return {};
 }
 
-// LEGEND^forged^delivered^duel^trio^gold^perfect^total^bars^essences^embers^epic (epic: bit of the instruments with an epic arcanite one)
+// LEGEND^forged^delivered^duel^trio^gold^perfect^total^bars^essences^hearts^epic (epic: bit of the instruments with an epic arcanite one)
 void Send(Player* player)
 {
     State const state = Load(player->GetGUID().GetCounter());
@@ -167,7 +167,7 @@ void Send(Player* player)
     Protocol::Send(player, "LEGEND^" + std::to_string(state.forged) + '^' + std::to_string(state.delivered) + '^' + std::to_string(state.duel)
         + '^' + std::to_string(state.trio) + '^' + std::to_string(gold) + '^' + std::to_string(perfect) + '^' + std::to_string(BookSize())
         + '^' + std::to_string(std::min(player->GetItemCount(ITEM_ARCANITE_BAR), BARS)) + '^' + std::to_string(std::min(player->GetItemCount(ITEM_ESSENCE_OF_WATER), ESSENCES))
-        + '^' + std::to_string(std::min(player->GetItemCount(ITEM_LIVING_EMBER), EMBERS)) + '^' + std::to_string(epic));
+        + '^' + std::to_string(std::min(player->GetItemCount(ITEM_HEART_OF_FIRE), HEARTS)) + '^' + std::to_string(epic));
 }
 
 std::string Deliver(Player* player)
@@ -177,11 +177,11 @@ std::string Deliver(Player* player)
         return "Votre instrument légendaire est déjà forgé.";
     if (state.delivered)
         return "Vous avez déjà remis les matériaux.";
-    if (player->GetItemCount(ITEM_ARCANITE_BAR) < BARS || player->GetItemCount(ITEM_ESSENCE_OF_WATER) < ESSENCES || player->GetItemCount(ITEM_LIVING_EMBER) < EMBERS)
-        return "Il vous faut 10 barres d'arcanite, 5 essences d'eau et 1 braise vivante.";
+    if (player->GetItemCount(ITEM_ARCANITE_BAR) < BARS || player->GetItemCount(ITEM_ESSENCE_OF_WATER) < ESSENCES || player->GetItemCount(ITEM_HEART_OF_FIRE) < HEARTS)
+        return "Il vous faut 10 barres d'arcanite, 5 essences d'eau et 1 Cœur de feu (Heart of Fire).";
     player->DestroyItemCount(ITEM_ARCANITE_BAR, BARS, true);
     player->DestroyItemCount(ITEM_ESSENCE_OF_WATER, ESSENCES, true);
-    player->DestroyItemCount(ITEM_LIVING_EMBER, EMBERS, true);
+    player->DestroyItemCount(ITEM_HEART_OF_FIRE, HEARTS, true);
     Mark(player->GetGUID().GetCounter(), "delivered");
     return {};
 }

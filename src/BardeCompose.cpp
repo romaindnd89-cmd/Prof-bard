@@ -233,9 +233,9 @@ std::string Copy(Player* player, uint32 songId)
     if (config.requireProfession && !player->HasSpell(PROFESSION_SPELL))
         return "Vous n'avez pas appris le métier de barde.";
 
-    constexpr uint32 PARCHMENT = 39354, INK = 39469;          // Light Parchment, Moonglow Ink
-    if (!player->HasItemCount(PARCHMENT) || !player->HasItemCount(INK))
-        return "Il vous faut 1 Parchemin léger (Light Parchment) et 1 Encre de lune (Moonglow Ink).";
+    constexpr uint32 PARCHMENT = 39354;                       // Light Parchment: 15 copper, sold by 96 vendors (no ink needed)
+    if (!player->HasItemCount(PARCHMENT))
+        return "Il vous faut 1 Parchemin léger (Light Parchment), en vente chez les marchands.";
 
     ItemPosCountVec positions;
     InventoryResult const result = player->CanStoreNewItem(NULL_BAG, NULL_SLOT, positions, SCROLL_ITEM, 1);
@@ -245,7 +245,6 @@ std::string Copy(Player* player, uint32 songId)
         return "Vos sacs sont pleins.";
     }
     player->DestroyItemCount(PARCHMENT, 1, true);
-    player->DestroyItemCount(INK, 1, true);
     if (Item* scroll = player->StoreNewItem(positions, SCROLL_ITEM, true))
     {
         scroll->SetEnchantment(PERM_ENCHANTMENT_SLOT, songId, 0, 0);       // which song is on the scroll

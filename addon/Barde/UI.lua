@@ -702,7 +702,7 @@ local function CreateFrameUI()
     deleteButton:Hide()
     d.deleteButton = deleteButton
 
-    -- Copier une de ses compositions sur un parchemin (1 Parchemin léger et 1 Encre de lune) : on peut le vendre ou l'échanger.
+    -- Copier une de ses compositions sur un parchemin (1 Parchemin léger) : on peut le vendre ou l'échanger.
     local copyButton = CreateFrame("Button", nil, d, "UIPanelButtonTemplate")
     ns.Size(copyButton, 46, 18)
     copyButton:SetPoint("RIGHT", deleteButton, "LEFT", -2, 0)
@@ -711,7 +711,7 @@ local function CreateFrameUI()
     copyButton:SetScript("OnEnter", function(self)
         GameTooltip:SetOwner(self, "ANCHOR_TOP")
         GameTooltip:SetText(ns.T("Copier sur un parchemin"))
-        GameTooltip:AddLine(ns.T("Il faut 1 Parchemin léger et 1 Encre de lune. Le parchemin se vend ou s'échange ; celui qui le lit apprend l'air."), 1, 1, 1, 1)
+        GameTooltip:AddLine(ns.T("Il faut 1 Parchemin léger. Le parchemin se vend ou s'échange ; celui qui le lit apprend l'air."), 1, 1, 1, 1)
         GameTooltip:Show()
     end)
     copyButton:SetScript("OnLeave", function() GameTooltip:Hide() end)

@@ -177,7 +177,7 @@ EN = {
     "n'importe quel instrument": "any instrument",
     "Suppr.": "Del.", "Copier": "Copy", "Copier sur un parchemin": "Copy onto a scroll",
     "Supprime cet air de votre carnet.": "Removes this song from your songbook.",
-    "Il faut 1 Parchemin léger et 1 Encre de lune. Le parchemin se vend ou s'échange ; celui qui le lit apprend l'air.": "Needs 1 Light Parchment and 1 Moonglow Ink. The scroll can be sold or traded; whoever reads it learns the song.",
+    "Il faut 1 Parchemin léger. Le parchemin se vend ou s'échange ; celui qui le lit apprend l'air.": "Needs 1 Light Parchment. The scroll can be sold or traded; whoever reads it learns the song.",
     "Air : ": "Song: ", "par ": "by ", "palier ": "tier ",
     "Mes créations": "My creations", "Custom": "Custom",
     "Aucun chant": "No chant",

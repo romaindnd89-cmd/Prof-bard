@@ -198,12 +198,12 @@ function handlers.SPEC(f)
     if ns.UI.RefreshSpec then ns.UI.RefreshSpec() end
 end
 
--- La quête légendaire : LEGEND^forgé^remis^duel^trio^or^parfaits^total^barres^essences^braises^masque des instruments épiques
+-- La quête légendaire : LEGEND^forgé^remis^duel^trio^or^parfaits^total^barres^essences^coeurs^masque des instruments épiques
 function handlers.LEGEND(f)
     ns.legend = {
         forged = f[2] == "1", delivered = f[3] == "1", duel = f[4] == "1", trio = f[5] == "1",
         gold = tonumber(f[6]) or 0, perfect = tonumber(f[7]) or 0, total = tonumber(f[8]) or 40,
-        bars = tonumber(f[9]) or 0, essences = tonumber(f[10]) or 0, embers = tonumber(f[11]) or 0, epic = tonumber(f[12]) or 0,
+        bars = tonumber(f[9]) or 0, essences = tonumber(f[10]) or 0, hearts = tonumber(f[11]) or 0, epic = tonumber(f[12]) or 0,
     }
     if ns.Legend then ns.Legend.Refresh() end
 end

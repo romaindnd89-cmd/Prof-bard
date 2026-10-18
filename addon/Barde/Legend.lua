@@ -133,8 +133,8 @@ function Legend.Refresh()
         "1. Maîtrise or (40 réussites) et un passage à 100 % sur les " .. total .. " airs du carnet.\n   Or : " .. s.gold .. "/" .. total .. "  -  100 % : " .. s.perfect .. "/" .. total,
         "1. Gold mastery (40 successes) and one 100 % run on all " .. total .. " songs of the book.\n   Gold: " .. s.gold .. "/" .. total .. "  -  100%: " .. s.perfect .. "/" .. total))
     frame.steps[2]:SetText(Mark(s.delivered) .. L(
-        "2. Remettre 10 barres d'arcanite, 5 essences d'eau, 1 braise vivante.\n   Vous avez : " .. s.bars .. "/10, " .. s.essences .. "/5, " .. s.embers .. "/1",
-        "2. Hand in 10 arcanite bars, 5 essences of water, 1 living ember.\n   You have: " .. s.bars .. "/10, " .. s.essences .. "/5, " .. s.embers .. "/1"))
+        "2. Remettre 10 barres d'arcanite, 5 essences d'eau, 1 Cœur de feu.\n   Vous avez : " .. s.bars .. "/10, " .. s.essences .. "/5, " .. s.hearts .. "/1",
+        "2. Hand in 10 arcanite bars, 5 essences of water, 1 Heart of Fire.\n   You have: " .. s.bars .. "/10, " .. s.essences .. "/5, " .. s.hearts .. "/1"))
     frame.steps[3]:SetText(Mark(s.duel) .. L(
         "3. Battre un virtuose en duel (le titre, ou l'or sur 3 airs).",
         "3. Beat a virtuoso in a duel (the title, or gold on 3 songs)."))
@@ -144,7 +144,7 @@ function Legend.Refresh()
     frame.steps[5]:SetText(Mark(s.forged) .. L(
         "5. Forger : un instrument d'arcanite épique devient légendaire.",
         "5. Forge: an epic arcanite instrument becomes legendary."))
-    if s.delivered or s.forged or s.bars < 10 or s.essences < 5 or s.embers < 1 then frame.give:Disable() else frame.give:Enable() end
+    if s.delivered or s.forged or s.bars < 10 or s.essences < 5 or s.hearts < 1 then frame.give:Disable() else frame.give:Enable() end
     local ready = s.gold >= total and s.perfect >= total and s.delivered and s.duel and s.trio and not s.forged
     local hasEpic = (s.epic or 0) > 0
     if not hasEpic or (forgeInstrument and not HasEpic(s.epic, forgeInstrument)) then forgeInstrument = nil end
