@@ -77,6 +77,8 @@ python tools/barde_dbc.py <server Data/dbc folder> <output path>/patch-ZO.MPQ
 
 The sounds (`addon/Barde/Sounds`) and textures are already provided. To regenerate them: `python tools/gen_instrument_sounds.py addon/Barde/Sounds` and `python tools/gen_textures.py addon/Barde/Textures`.
 
+The full list of GM commands is in [COMMANDES-MJ.md](COMMANDES-MJ.md).
+
 ## 6. Check that everything works
 
 In game, with a GM account:

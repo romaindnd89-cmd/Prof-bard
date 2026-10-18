@@ -13,6 +13,7 @@ A **bard** profession for AzerothCore (WoW 3.3.5): play songs in a rhythm mini-g
 
 - **Installation guide (English)**: [INSTALL.md](INSTALL.md) (français : [INSTALL.fr.md](INSTALL.fr.md))
 - Everything the profession brings (announcement text): [ANNONCE-DISCORD.md](ANNONCE-DISCORD.md)
+- **GM and player commands** (with a test recipe for every feature): [COMMANDES-MJ.md](COMMANDES-MJ.md)
 - Chant values: [docs/en/valeurs-des-buffs.md](docs/en/valeurs-des-buffs.md) (English) · [docs/valeurs-des-buffs.md](docs/valeurs-des-buffs.md) (français)
 - Per-version design notes: [docs/en/](docs/en/) (English) · [docs/](docs/) (français): `v0.3-ensemble`, `v0.4-atelier`, `v0.5-scene`, `v0.6-creation`, `v1.0-prestige`
 
@@ -75,6 +76,7 @@ Un métier de **barde** pour AzerothCore (WoW 3.3.5) : on joue des airs dans un 
 
 - Installation : [INSTALL.fr.md](INSTALL.fr.md) (English: [INSTALL.md](INSTALL.md))
 - Tout ce que le métier apporte (texte d'annonce) : [ANNONCE-DISCORD.md](ANNONCE-DISCORD.md)
+- **Commandes MJ et joueur** (avec une recette de test pour chaque fonction) : [COMMANDES-MJ.md](COMMANDES-MJ.md)
 - Valeurs des chants : [docs/valeurs-des-buffs.md](docs/valeurs-des-buffs.md) (English : [docs/en/valeurs-des-buffs.md](docs/en/valeurs-des-buffs.md))
 - Détail par version : [docs/](docs/) (English : [docs/en/](docs/en/)) : `v0.3-ensemble`, `v0.4-atelier`, `v0.5-scene`, `v0.6-creation`, `v1.0-prestige`
 

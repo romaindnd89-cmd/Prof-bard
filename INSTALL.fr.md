@@ -77,6 +77,8 @@ python tools/barde_dbc.py <dossier Data/dbc du serveur> <chemin de sortie>/patch
 
 Les sons (`addon/Barde/Sounds`) et les textures sont déjà fournis. Pour les régénérer : `python tools/gen_instrument_sounds.py addon/Barde/Sounds` et `python tools/gen_textures.py addon/Barde/Textures`.
 
+La liste complète des commandes MJ est dans [COMMANDES-MJ.md](COMMANDES-MJ.md).
+
 ## 6. Vérifier que tout marche
 
 En jeu, avec un compte MJ :
