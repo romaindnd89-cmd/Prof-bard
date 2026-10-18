@@ -8,8 +8,6 @@ You work in three places: the **server** (module, database, DBC, configuration),
 
 If you run a "CoA Server" from the manager (folders `Core`, `Data`, `mysql`, `Scripts`), `scripts/windows/INSTALLER.bat` does steps 2 to 5 below for you (database, configuration, DBC and client patch, addon). You still need a `worldserver.exe` built with the module: download it from the [Releases](https://github.com/romaindnd89-cmd/Prof-bard/releases/latest) (built for core `b95c4368`), or build it yourself (step 1). See [scripts/windows/LISEZ-MOI.md](scripts/windows/LISEZ-MOI.md).
 
-Players who only join your server do not install the module: they copy `addon/Barde` into `Interface\AddOns` and the `patch-ZO.MPQ` you built into their `Data` folder.
-
 ## 0. Before you start
 
 - **Back up** your databases (`acore_world`, `acore_characters`) and the server's `Data/dbc` folder. The DBC script keeps its own `*.pre-barde` copy of every file it changes, but a full backup is still wise.
