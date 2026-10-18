@@ -89,7 +89,7 @@ if not defined BUILD (
 set "BUILD=%BUILD:"=%"
 
 echo.
-if not exist "%REPACK%\Scripts\manage.py" ( echo ERREUR / ERROR : "%REPACK%" n'est pas un serveur CoA ^(Scripts\manage.py introuvable^). & pause & exit /b 1 )
+if not exist "%REPACK%\Scripts\manage.py" ( echo ERREUR / ERROR : "%REPACK%" n'est pas un serveur CoA ^(Scripts\manage.py introuvable^). & echo. & echo  Le jeu seul ne suffit pas : il faut aussi un SERVEUR CoA ^(dossier avec Core, Data, mysql et Scripts^). Installe-le d'abord, puis relance ce logiciel. & echo  The game alone is not enough: you also need a CoA SERVER ^(folder with Core, Data, mysql and Scripts^). Install it first, then run this again. & pause & exit /b 1 )
 if not exist "%BUILD%\worldserver.exe" ( echo ERREUR / ERROR : "%BUILD%\worldserver.exe" introuvable. & pause & exit /b 1 )
 if not exist "%REPACK%\Runtime\python\python.exe" ( echo ERREUR / ERROR : Python du serveur introuvable dans "%REPACK%\Runtime\python". & pause & exit /b 1 )
 
