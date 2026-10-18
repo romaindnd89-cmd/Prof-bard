@@ -6,7 +6,7 @@ You work in three places: the **server** (module, database, DBC, configuration),
 
 ## Easy path for a CoA server (Windows)
 
-If you run a "CoA Server" from the manager (folders `Core`, `Data`, `mysql`, `Scripts`), `scripts/windows/INSTALLER.bat` does steps 2 to 5 below for you (database, configuration, DBC and client patch, addon). You still need a `worldserver.exe` built with the module (step 1, or from someone running the same server version; it is not distributed here). See [scripts/windows/LISEZ-MOI.md](scripts/windows/LISEZ-MOI.md).
+If you run a "CoA Server" from the manager (folders `Core`, `Data`, `mysql`, `Scripts`), `scripts/windows/INSTALLER.bat` does steps 2 to 5 below for you (database, configuration, DBC and client patch, addon). You still need a `worldserver.exe` built with the module: download it from the [Releases](https://github.com/romaindnd89-cmd/Prof-bard/releases/latest) (built for core `b95c4368`), or build it yourself (step 1). See [scripts/windows/LISEZ-MOI.md](scripts/windows/LISEZ-MOI.md).
 
 Players who only join your server do not install the module: they copy `addon/Barde` into `Interface\AddOns` and the `patch-ZO.MPQ` you built into their `Data` folder.
 

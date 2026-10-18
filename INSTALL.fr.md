@@ -6,7 +6,7 @@ Il faut intervenir à trois endroits : le **serveur** (module, base de données,
 
 ## Le chemin facile pour un serveur CoA (Windows)
 
-Si vous avez un « CoA Server » du gestionnaire (dossiers `Core`, `Data`, `mysql`, `Scripts`), `scripts/windows/INSTALLER.bat` fait les étapes 2 à 5 ci-dessous à votre place (base de données, configuration, DBC et patch client, addon). Il faut quand même un `worldserver.exe` compilé avec le module (étape 1, ou obtenu auprès de quelqu'un qui a la même version de serveur ; il n'est pas distribué ici). Voir [scripts/windows/LISEZ-MOI.md](scripts/windows/LISEZ-MOI.md).
+Si vous avez un « CoA Server » du gestionnaire (dossiers `Core`, `Data`, `mysql`, `Scripts`), `scripts/windows/INSTALLER.bat` fait les étapes 2 à 5 ci-dessous à votre place (base de données, configuration, DBC et patch client, addon). Il faut quand même un `worldserver.exe` compilé avec le module : téléchargez-le dans les [Releases](https://github.com/romaindnd89-cmd/Prof-bard/releases/latest) (compilé pour le cœur `b95c4368`), ou compilez-le vous-même (étape 1). Voir [scripts/windows/LISEZ-MOI.md](scripts/windows/LISEZ-MOI.md).
 
 Les joueurs qui rejoignent seulement votre serveur n'installent pas le module : ils copient `addon/Barde` dans `Interface\AddOns` et le `patch-ZO.MPQ` que vous avez fabriqué dans leur dossier `Data`.
 

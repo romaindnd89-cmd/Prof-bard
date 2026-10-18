@@ -4,7 +4,7 @@
 
 **Français.** Pour un serveur « CoA Server » du gestionnaire (dossiers `Core`, `Data`, `mysql`, `Scripts`) :
 
-1. Il faut un `worldserver.exe` **compilé avec le module**. Il n'est pas dans ce dépôt : on le compile à partir des sources publiques du cœur du serveur (voir « Compiler le serveur » plus bas), ou on le demande à quelqu'un qui a le même serveur. Le programme doit être de la **même version** que votre serveur.
+1. Il faut un `worldserver.exe` **compilé avec le module**. Il est dans les [Releases](https://github.com/romaindnd89-cmd/Prof-bard/releases/latest) pour le cœur `b95c4368` ; sinon on le compile à partir des sources publiques du cœur du serveur (voir « Compiler le serveur » plus bas), ou on le demande à quelqu'un qui a le même serveur. Le programme doit être de la **même version** que votre serveur.
 2. Fermez le jeu et faites une copie de sécurité de votre dossier serveur.
 3. Double-cliquez sur `INSTALLER.bat` et donnez les trois chemins : le serveur, le jeu, et le dossier qui contient le `worldserver.exe` compilé.
 4. Le script arrête le serveur, installe le programme, la configuration et la base de données, fabrique le patch client à partir de **vos** DBC, copie l'addon et le patch dans le jeu, puis redémarre le serveur.
@@ -14,7 +14,7 @@ Les autres joueurs n'ont rien de tout cela à faire : ils copient seulement `add
 
 **English.** For a "CoA Server" from the manager (folders `Core`, `Data`, `mysql`, `Scripts`):
 
-1. You need a `worldserver.exe` **built with the module**. It is not in this repository: build it from the core's public sources (see "Building the server" below), or ask someone who runs the same server. The program must be the **same version** as your server.
+1. You need a `worldserver.exe` **built with the module**. It is in the [Releases](https://github.com/romaindnd89-cmd/Prof-bard/releases/latest) for core `b95c4368`; otherwise build it from the core's public sources (see "Building the server" below), or ask someone who runs the same server. The program must be the **same version** as your server.
 2. Close the game and back up your server folder.
 3. Double-click `INSTALLER.bat` and give the three paths: the server, the game, and the folder holding the built `worldserver.exe`.
 4. The script stops the server, installs the program, the configuration and the database, builds the client patch from **your** DBC files, copies the addon and the patch into the game, then restarts the server.

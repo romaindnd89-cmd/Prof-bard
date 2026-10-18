@@ -18,6 +18,8 @@ A **bard** profession for AzerothCore (WoW 3.3.5): play songs in a rhythm mini-g
 
 ### Quick install
 
+**CoA Server users (Windows):** a ready-made `worldserver.exe` is in the [Releases](https://github.com/romaindnd89-cmd/Prof-bard/releases/latest) (for core `b95c4368`), and `scripts/windows/INSTALLER.bat` installs everything else.
+
 Full guide: [INSTALL.md](INSTALL.md). In short:
 
 1. Put the module in your AzerothCore sources as `modules/mod-barde` (the folder name matters) and build with `-DMODULES=static`.
@@ -77,6 +79,8 @@ Un métier de **barde** pour AzerothCore (WoW 3.3.5) : on joue des airs dans un 
 - Détail par version : [docs/](docs/) (English : [docs/en/](docs/en/)) : `v0.3-ensemble`, `v0.4-atelier`, `v0.5-scene`, `v0.6-creation`, `v1.0-prestige`
 
 ### Installation rapide
+
+**Utilisateurs d'un CoA Server (Windows) :** un `worldserver.exe` prêt à l'emploi est dans les [Releases](https://github.com/romaindnd89-cmd/Prof-bard/releases/latest) (pour le cœur `b95c4368`), et `scripts/windows/INSTALLER.bat` installe tout le reste.
 
 Manuel complet : [INSTALL.fr.md](INSTALL.fr.md) (anglais : [INSTALL.md](INSTALL.md)). En bref :
 
