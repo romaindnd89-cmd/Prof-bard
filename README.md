@@ -21,7 +21,10 @@ A **bard** profession for AzerothCore (WoW 3.3.5): play songs in a rhythm mini-g
 
 **CoA Server users (Windows): download `Prof-bard-installateur-CoA.zip` from the [Releases](https://github.com/romaindnd89-cmd/Prof-bard/releases/latest), unzip its content into your game folder (the one holding `Data`) and double-click `INSTALLER.bat`.** It installs the profession on your local server and into your game (for core `b95c4368`). In the CoA launcher, choose the **Solo** connection (your own local server) before starting the game, then in game with a GM account type `.barde apprendre` and `/barde`.
 
-Full guide: [INSTALL.md](INSTALL.md). In short:
+<details>
+<summary><b>Another AzerothCore server? Manual installation (advanced)</b></summary>
+
+Most people do **not** need this: the installer above does everything for a CoA Server. Full guide: [INSTALL.md](INSTALL.md). In short:
 
 1. Put the module in your AzerothCore sources as `modules/mod-barde` (the folder name matters) and build with `-DMODULES=static`.
 2. Apply `data/sql/db-world/*.sql` to the world database and `data/sql/db-characters/mod_barde_characters.sql` to the characters database.
@@ -29,6 +32,8 @@ Full guide: [INSTALL.md](INSTALL.md). In short:
 4. Run `python tools/barde_dbc.py <server Data/dbc> <out>/patch-ZO.MPQ`, restart the server, copy the patch to the client's `Data` folder.
 5. Copy `addon/Barde` into the client's `Interface/AddOns`, **fully restart the game** (a `/reload` is not enough for new addon files).
 6. In game as a GM: `.barde luth`, `.barde apprendre`, then `/barde`.
+
+</details>
 
 ### Updating
 
@@ -98,7 +103,10 @@ Un métier de **barde** pour AzerothCore (WoW 3.3.5) : on joue des airs dans un 
 
 **Utilisateurs d'un CoA Server (Windows) : téléchargez `Prof-bard-installateur-CoA.zip` dans les [Releases](https://github.com/romaindnd89-cmd/Prof-bard/releases/latest), décompressez son contenu dans votre dossier de jeu (celui qui contient `Data`) et double-cliquez sur `INSTALLER.bat`.** Il installe le métier sur votre serveur local et dans votre jeu (pour le cœur `b95c4368`). Dans le lanceur CoA, choisissez la connexion **Solo** (votre propre serveur local) avant de lancer le jeu, puis en jeu avec un compte MJ tapez `.barde apprendre` et `/barde`.
 
-Manuel complet : [INSTALL.fr.md](INSTALL.fr.md) (anglais : [INSTALL.md](INSTALL.md)). En bref :
+<details>
+<summary><b>Un autre serveur AzerothCore ? Installation manuelle (avancé)</b></summary>
+
+La plupart des gens n'en ont **pas** besoin : l'installateur ci-dessus fait tout pour un CoA Server. Manuel complet : [INSTALL.fr.md](INSTALL.fr.md) (anglais : [INSTALL.md](INSTALL.md)). En bref :
 
 1. Placez le module dans les sources d'AzerothCore sous `modules/mod-barde` (le nom du dossier compte) et compilez avec `-DMODULES=static`.
 2. Appliquez `data/sql/db-world/*.sql` à la base world et `data/sql/db-characters/mod_barde_characters.sql` à la base characters.
@@ -106,6 +114,8 @@ Manuel complet : [INSTALL.fr.md](INSTALL.fr.md) (anglais : [INSTALL.md](INSTALL.
 4. Lancez `python tools/barde_dbc.py <Data/dbc du serveur> <sortie>/patch-ZO.MPQ`, redémarrez le serveur, copiez le patch dans le dossier `Data` du client.
 5. Copiez `addon/Barde` dans `Interface/AddOns` du client, puis **quittez complètement le jeu** et relancez-le (un `/reload` ne suffit pas pour un nouveau fichier d'addon).
 6. En jeu, avec un compte MJ : `.barde luth`, `.barde apprendre`, puis `/barde`.
+
+</details>
 
 ### Mettre à jour
 

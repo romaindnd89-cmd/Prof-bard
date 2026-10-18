@@ -1,6 +1,6 @@
 # Installing mod-barde
 
-This guide installs the module on an AzerothCore (3.3.5a) server and its addon on the client. Allow half an hour, plus the build time. *Français : [INSTALL.fr.md](INSTALL.fr.md).*
+**Most people only need the installer** (see the [README](README.md#quick-install)): this guide is for other AzerothCore servers and for developers. It installs the module on an AzerothCore (3.3.5a) server and its addon on the client. Allow half an hour, plus the build time. *Français : [INSTALL.fr.md](INSTALL.fr.md).*
 
 You work in three places: the **server** (module, database, DBC, configuration), the **client patch** and the **addon**. The order below avoids the usual traps.
 

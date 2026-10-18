@@ -1,6 +1,6 @@
 # Installer mod-barde
 
-Ce manuel installe le module sur un serveur AzerothCore (3.3.5a) et son addon sur le client. Prévoyez une demi-heure, plus la compilation. *English: [INSTALL.md](INSTALL.md).*
+**La plupart des gens n'ont besoin que de l'installateur** (voir le [README](README.md#installation-rapide)) : ce manuel est pour les autres serveurs AzerothCore et pour les développeurs. Il installe le module sur un serveur AzerothCore (3.3.5a) et son addon sur le client. Prévoyez une demi-heure, plus la compilation. *English: [INSTALL.md](INSTALL.md).*
 
 Il faut intervenir à trois endroits : le **serveur** (module, base de données, DBC, configuration), le **patch client** et l'**addon**. L'ordre ci-dessous évite les pièges.
 
