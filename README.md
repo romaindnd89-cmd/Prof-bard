@@ -18,7 +18,7 @@ A **bard** profession for AzerothCore (WoW 3.3.5): play songs in a rhythm mini-g
 
 ### Quick install
 
-**CoA Server users (Windows): download `Prof-bard-installateur-CoA.zip` from the [Releases](https://github.com/romaindnd89-cmd/Prof-bard/releases/latest), unzip it into your game folder and double-click `INSTALLER.bat`.** It installs the profession on your local server and into your game (for core `b95c4368`).
+**CoA Server users (Windows): download `Prof-bard-installateur-CoA.zip` from the [Releases](https://github.com/romaindnd89-cmd/Prof-bard/releases/latest), unzip its content into your game folder (the one holding `Data`) and double-click `INSTALLER.bat`.** It installs the profession on your local server and into your game (for core `b95c4368`). In the CoA launcher, choose the **Solo** connection (your own local server) before starting the game, then in game with a GM account type `.barde apprendre` and `/barde`.
 
 Full guide: [INSTALL.md](INSTALL.md). In short:
 
@@ -80,7 +80,7 @@ Un métier de **barde** pour AzerothCore (WoW 3.3.5) : on joue des airs dans un 
 
 ### Installation rapide
 
-**Utilisateurs d'un CoA Server (Windows) : téléchargez `Prof-bard-installateur-CoA.zip` dans les [Releases](https://github.com/romaindnd89-cmd/Prof-bard/releases/latest), décompressez-le dans votre dossier de jeu et double-cliquez sur `INSTALLER.bat`.** Il installe le métier sur votre serveur local et dans votre jeu (pour le cœur `b95c4368`).
+**Utilisateurs d'un CoA Server (Windows) : téléchargez `Prof-bard-installateur-CoA.zip` dans les [Releases](https://github.com/romaindnd89-cmd/Prof-bard/releases/latest), décompressez son contenu dans votre dossier de jeu (celui qui contient `Data`) et double-cliquez sur `INSTALLER.bat`.** Il installe le métier sur votre serveur local et dans votre jeu (pour le cœur `b95c4368`). Dans le lanceur CoA, choisissez la connexion **Solo** (votre propre serveur local) avant de lancer le jeu, puis en jeu avec un compte MJ tapez `.barde apprendre` et `/barde`.
 
 Manuel complet : [INSTALL.fr.md](INSTALL.fr.md) (anglais : [INSTALL.md](INSTALL.md)). En bref :
 

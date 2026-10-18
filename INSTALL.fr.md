@@ -6,6 +6,8 @@ Il faut intervenir à trois endroits : le **serveur** (module, base de données,
 
 ## Le chemin facile pour un serveur CoA (Windows)
 
+**En bref :** décompressez le contenu de `Prof-bard-installateur-CoA.zip` dans votre dossier de jeu (celui qui contient `Data`), puis double-cliquez sur `INSTALLER.bat`. Dans le lanceur CoA, choisissez la connexion **Solo** (votre propre serveur local) avant de lancer le jeu, puis en jeu avec un compte MJ tapez `.barde apprendre` et `/barde`.
+
 Si vous avez un « CoA Server » du gestionnaire (dossiers `Core`, `Data`, `mysql`, `Scripts`), `scripts/windows/INSTALLER.bat` fait les étapes 2 à 5 ci-dessous à votre place (base de données, configuration, DBC et patch client, addon). Il faut quand même un `worldserver.exe` compilé avec le module : téléchargez-le dans les [Releases](https://github.com/romaindnd89-cmd/Prof-bard/releases/latest) (compilé pour le cœur `b95c4368`), ou compilez-le vous-même (étape 1). Voir [scripts/windows/LISEZ-MOI.md](scripts/windows/LISEZ-MOI.md).
 
 ## 0. Avant de commencer

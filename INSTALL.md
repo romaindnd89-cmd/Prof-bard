@@ -6,6 +6,8 @@ You work in three places: the **server** (module, database, DBC, configuration),
 
 ## Easy path for a CoA server (Windows)
 
+**In short:** unzip the content of `Prof-bard-installateur-CoA.zip` into your game folder (the one holding `Data`), then double-click `INSTALLER.bat`. In the CoA launcher, choose the **Solo** connection (your own local server) before starting the game, then in game with a GM account type `.barde apprendre` and `/barde`.
+
 If you run a "CoA Server" from the manager (folders `Core`, `Data`, `mysql`, `Scripts`), `scripts/windows/INSTALLER.bat` does steps 2 to 5 below for you (database, configuration, DBC and client patch, addon). You still need a `worldserver.exe` built with the module: download it from the [Releases](https://github.com/romaindnd89-cmd/Prof-bard/releases/latest) (built for core `b95c4368`), or build it yourself (step 1). See [scripts/windows/LISEZ-MOI.md](scripts/windows/LISEZ-MOI.md).
 
 ## 0. Before you start

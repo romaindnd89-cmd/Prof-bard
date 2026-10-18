@@ -8,7 +8,7 @@
 2. Fermez le jeu et faites une copie de sécurité de votre dossier serveur.
 3. Décompressez le paquet **directement dans votre dossier de jeu** (celui qui contient `Data` et `Interface`), puis double-cliquez sur `INSTALLER.bat`.
 4. Il cherche votre serveur (environ une minute) et vous demande de confirmer. Il arrête le serveur, installe le programme, la configuration et la base de données, fabrique le patch client à partir de **vos** DBC, copie l'addon et le patch dans le jeu, puis redémarre le serveur.
-5. Quand « ready » apparaît, attendez 1 minute, lancez le jeu, puis (compte MJ) `.barde apprendre` et `/barde`.
+5. Quand « ready » apparaît, attendez 1 minute. Dans le lanceur CoA, choisissez la connexion **Solo** (votre propre serveur local), lancez le jeu, puis (compte MJ) `.barde apprendre` et `/barde`.
 
 **English.** The profession is played with **your own local server** (the manager's "CoA Server", with the folders `Core`, `Data`, `mysql`, `Scripts`).
 
@@ -16,7 +16,7 @@
 2. Close the game and back up your server folder.
 3. Unzip the pack **directly into your game folder** (the one holding `Data` and `Interface`), then double-click `INSTALLER.bat`.
 4. It looks for your server (about a minute) and asks you to confirm. It stops the server, installs the program, the configuration and the database, builds the client patch from **your** DBC files, copies the addon and the patch into the game, then restarts the server.
-5. When "ready" shows, wait 1 minute, start the game, then (GM account) `.barde apprendre` and `/barde`.
+5. When "ready" shows, wait 1 minute. In the CoA launcher choose the **Solo** connection (your own local server), start the game, then (GM account) `.barde apprendre` and `/barde`.
 
 ## Compiler le serveur / Building the server
 
