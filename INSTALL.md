@@ -19,7 +19,7 @@ SELECT entry, name FROM item_template WHERE entry BETWEEN 1950001 AND 1950999 AN
 1. Placez le module dans `modules/` des sources AzerothCore, dans un dossier nommé **`mod-barde`** (le dépôt s'appelle `Prof-bard`, mais le module doit porter ce nom) :
 
 ```
-git clone https://github.com/<compte>/Prof-bard.git modules/mod-barde
+git clone https://github.com/romaindnd89-cmd/Prof-bard.git modules/mod-barde
 ```
 2. Compilez le serveur avec les modules statiques (`-DMODULES=static`), comme pour n'importe quel module AzerothCore. Sous Windows, `scripts/windows/BUILD_BARDE.bat` montre une compilation complète (Visual Studio, CMake, Ninja, vcpkg) : **adaptez les chemins**, il a été écrit pour un poste précis.
 

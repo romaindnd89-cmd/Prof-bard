@@ -1,6 +1,6 @@
 # Annonce Discord : le métier de barde
 
-Textes prêts à coller. Discord coupe les messages à 2000 caractères : la version longue est découpée en blocs numérotés. Remplacez `[lien]` par l'adresse du dépôt.
+Textes prêts à coller. Discord coupe les messages à 2000 caractères : la version longue est découpée en blocs numérotés. 
 
 ---
 
@@ -9,14 +9,14 @@ Textes prêts à coller. Discord coupe les messages à 2000 caractères : la ver
 **Nouveau métier : le Barde** 🎶
 Jouez des airs dans un mini-jeu de rythme (touches D F J K) et gagnez des **chants** : mana, armure, vitesse, hâte, résistances... Fabriquez vos instruments, jouez à deux ou trois pour des chants de groupe, donnez des concerts et recevez des pourboires, composez vos propres airs, et gravissez le prestige jusqu'à un **instrument légendaire unique**.
 Dans le jeu : `/barde`, et le bouton **Aide** pour le guide complet.
-Code et manuel d'installation : [lien]
+Code et manuel d'installation : https://github.com/romaindnd89-cmd/Prof-bard
 
 ## Short version (English)
 
 **New profession: the Bard** 🎶
 Play songs in a rhythm mini-game (keys D F J K) and earn **chants**: mana, armor, speed, haste, resistances... Craft your instruments, play as a duo or trio for group chants, give concerts and earn tips, compose your own songs, and climb the prestige ladder to a **one-of-a-kind legendary instrument**.
 In game: `/barde`, and the **Help** button for the full guide.
-Code and installation guide: [lien]
+Code and installation guide: https://github.com/romaindnd89-cmd/Prof-bard
 
 ---
 
@@ -75,7 +75,7 @@ Code and installation guide: [lien]
 **🧭 Confort**
 - Addon **bilingue** (FR / US) en un clic, **guide du métier** intégré (bouton Aide), case pour couper le son des autres bardes.
 
-Dans le jeu : `/barde` — Code et manuel d'installation : [lien]
+Dans le jeu : `/barde` — Code et manuel d'installation : https://github.com/romaindnd89-cmd/Prof-bard
 
 ---
 
@@ -134,4 +134,4 @@ Dans le jeu : `/barde` — Code et manuel d'installation : [lien]
 **🧭 Comfort**
 - **Bilingual** addon (FR / US) in one click, built-in **profession guide** (Help button), a box to mute other bards.
 
-In game: `/barde` — Code and installation guide: [lien]
+In game: `/barde` — Code and installation guide: https://github.com/romaindnd89-cmd/Prof-bard
