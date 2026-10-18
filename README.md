@@ -11,6 +11,7 @@
 A **bard** profession for AzerothCore (WoW 3.3.5): play songs in a rhythm mini-game to earn chants (buffs), alone or together, craft your own instruments, give concerts, and climb a prestige ladder up to a legendary instrument.
 
 
+- ▶️ **Video presentation**: <https://youtu.be/CQa4rB_-sZ4>
 - **Installation guide (English)**: [INSTALL.md](INSTALL.md) (français : [INSTALL.fr.md](INSTALL.fr.md))
 - Everything the profession brings (announcement text): [ANNONCE-DISCORD.md](ANNONCE-DISCORD.md)
 - **GM and player commands** (with a test recipe for every feature): [COMMANDES-MJ.md](COMMANDES-MJ.md)
@@ -117,6 +118,7 @@ GNU Affero General Public License v3.0, like AzerothCore. See `LICENSE`.
 Un métier de **barde** pour AzerothCore (WoW 3.3.5) : on joue des airs dans un mini-jeu de rythme pour obtenir des chants (des améliorations), seul ou à plusieurs, on fabrique ses instruments, on donne des concerts et on gravit un prestige jusqu'à un instrument légendaire.
 
 
+- ▶️ **Vidéo de présentation** : <https://youtu.be/CQa4rB_-sZ4>
 - Installation : [INSTALL.fr.md](INSTALL.fr.md) (English: [INSTALL.md](INSTALL.md))
 - Tout ce que le métier apporte (texte d'annonce) : [ANNONCE-DISCORD.md](ANNONCE-DISCORD.md)
 - **Commandes MJ et joueur** (avec une recette de test pour chaque fonction) : [COMMANDES-MJ.md](COMMANDES-MJ.md)
