@@ -1,105 +1,105 @@
-# Installer mod-barde
+# Installing mod-barde
 
-Ce manuel installe le module sur un serveur AzerothCore (3.3.5a) et son addon sur le client. Prévoyez une demi-heure, plus la compilation. *English: [INSTALL.en.md](INSTALL.en.md).*
+This guide installs the module on an AzerothCore (3.3.5a) server and its addon on the client. Allow half an hour, plus the build time. *Français : [INSTALL.fr.md](INSTALL.fr.md).*
 
-Il faut intervenir à trois endroits : le **serveur** (module, base de données, DBC, configuration), le **patch client** et l'**addon**. L'ordre ci-dessous évite les pièges.
+You work in three places: the **server** (module, database, DBC, configuration), the **client patch** and the **addon**. The order below avoids the usual traps.
 
-## 0. Avant de commencer
+## 0. Before you start
 
-- Faites une **sauvegarde** de vos bases (`acore_world`, `acore_characters`) et du dossier `Data/dbc` du serveur. Le script des DBC garde de lui-même une copie `*.pre-barde` de chaque fichier qu'il modifie, mais une sauvegarde complète reste prudente.
-- Installez **Python 3** (aucune bibliothèque à ajouter).
-- Vérifiez que les identifiants du barde sont libres chez vous : sorts et objets 1950001 à 1950999, améliorations d'objet 1950501 à 1950504, titres 226, 227 et 231 à 235 (lignes « Reuse » de `CharTitles.dbc`), objets de jeu 1950401 à 1950403.
+- **Back up** your databases (`acore_world`, `acore_characters`) and the server's `Data/dbc` folder. The DBC script keeps its own `*.pre-barde` copy of every file it changes, but a full backup is still wise.
+- Install **Python 3** (no library to add).
+- Check that the bard's ids are free on your server: spells and items 1950001 to 1950999, item enchantments 1950501 to 1950504, titles 226, 227 and 231 to 235 (the "Reuse" rows of `CharTitles.dbc`), game objects 1950401 to 1950403.
 
 ```sql
 SELECT entry, name FROM item_template WHERE entry BETWEEN 1950001 AND 1950999 AND name NOT LIKE '%cuivre%';
 ```
 
-## 1. Le module
+## 1. The module
 
-1. Placez le module dans `modules/` des sources AzerothCore, dans un dossier nommé **`mod-barde`** (le dépôt s'appelle `Prof-bard`, mais le module doit porter ce nom) :
+1. Put the module in the AzerothCore sources' `modules/`, in a folder named **`mod-barde`** (the repository is called `Prof-bard`, but the module must carry this name):
 
 ```
 git clone https://github.com/romaindnd89-cmd/Prof-bard.git modules/mod-barde
 ```
-2. Compilez le serveur avec les modules statiques (`-DMODULES=static`), comme pour n'importe quel module AzerothCore. Sous Windows, `scripts/windows/BUILD_BARDE.bat` montre une compilation complète (Visual Studio, CMake, Ninja, vcpkg) : **adaptez les chemins**, il a été écrit pour un poste précis.
+2. Build the server with static modules (`-DMODULES=static`), as for any AzerothCore module. On Windows, `scripts/windows/BUILD_BARDE.bat` shows a complete build (Visual Studio, CMake, Ninja, vcpkg): **adapt the paths**, it was written for one particular machine.
 
-## 2. La base de données
+## 2. The database
 
-Appliquez, dans cet ordre, les fichiers SQL (ou laissez l'updater d'AzerothCore le faire si `Updates.EnableDatabases` est actif) :
+Apply the SQL files in this order (or let AzerothCore's updater do it if `Updates.EnableDatabases` is on):
 
-- base **world** : `data/sql/db-world/*.sql` (les cinq fichiers : monde, camp, instruments, airs, formateur) ;
-- base **characters** : `data/sql/db-characters/mod_barde_characters.sql`.
+- **world** database: `data/sql/db-world/*.sql` (the five files: world, camp, instruments, songs, trainer);
+- **characters** database: `data/sql/db-characters/mod_barde_characters.sql`.
 
-Ces fichiers se rejouent sans danger.
+The files can be replayed safely.
 
-**Le formateur.** Le métier s'apprend au Livre des artisans par le sort « Apprenti barde » (1950200). `mod_barde_world_trainer.sql` l'ajoute aux formateurs 200001 et 200002 du serveur d'origine : si ces numéros n'existent pas chez vous, remplacez-les par les vôtres, ou enseignez le métier à la main en jeu avec `.barde apprendre`.
+**The trainer.** The profession is learned from the Crafting book through the spell "Apprenti barde" (1950200). `mod_barde_world_trainer.sql` adds it to trainers 200001 and 200002 of the original server: if those ids do not exist on yours, replace them with yours, or teach the profession by hand in game with `.barde apprendre`.
 
-## 3. La configuration
+## 3. The configuration
 
-Copiez `conf/mod_barde.conf.dist` en `mod_barde.conf` dans le dossier des configurations de modules du serveur. Chaque réglage est commenté. Les plus utiles :
+Copy `conf/mod_barde.conf.dist` to `mod_barde.conf` in the server's modules configuration folder. Every setting is commented. The most useful:
 
-| Réglage | Rôle |
+| Setting | Purpose |
 |---|---|
-| `Barde.Enable` | active le module |
-| `Barde.RequireProfession` | exige d'avoir appris le métier |
-| `Barde.SkillMax` | compétence maximale (300) |
-| `Barde.Buff.*` | durées, plafonds et crescendo des chants |
-| `Barde.Camp.*`, `Barde.Concert.*` | camp, bourse, pourboires |
-| `Barde.Spec.*`, `Barde.Ovation.*` | spécialités, ovations |
+| `Barde.Enable` | turns the module on |
+| `Barde.RequireProfession` | requires the profession to have been learned |
+| `Barde.SkillMax` | maximum skill (300) |
+| `Barde.Buff.*` | durations, caps and crescendo of the chants |
+| `Barde.Camp.*`, `Barde.Concert.*` | camp, purse, tips |
+| `Barde.Spec.*`, `Barde.Ovation.*` | specialties, ovations |
 
-## 4. Les DBC et le patch client
+## 4. The DBC files and the client patch
 
-Le client doit connaître les sorts, objets, améliorations, animations et titres du barde. L'outil les ajoute aux DBC du serveur et fabrique le patch client :
+The client must know the bard's spells, items, enchantments, animations and titles. The tool adds them to the server's DBC files and builds the client patch:
 
 ```
-python tools/barde_dbc.py <dossier Data/dbc du serveur> <chemin de sortie>/patch-ZO.MPQ
+python tools/barde_dbc.py <server Data/dbc folder> <output path>/patch-ZO.MPQ
 ```
 
-- Il copie chaque DBC qu'il modifie en `*.pre-barde` (une seule fois) et se rejoue sans doublon.
-- Si un numéro est déjà pris, il s'arrête et le dit : changez-le dans `tools/barde_dbc.py` (et dans les fichiers SQL).
-- Le patch s'appelle `patch-ZO.MPQ` pour passer **après** les autres patchs du client. Si vous avez des patchs plus tard dans l'ordre alphabétique, renommez-le plus loin (`patch-ZP.MPQ`...).
+- It copies each DBC it changes to `*.pre-barde` (once) and can be replayed without duplicates.
+- If an id is already taken it stops and says so: change it in `tools/barde_dbc.py` (and in the SQL files).
+- The patch is named `patch-ZO.MPQ` so that it loads **after** the client's other patches. If you have patches later in alphabetical order, rename it further (`patch-ZP.MPQ`...).
 
-**Redémarrez le serveur** après avoir modifié ses DBC.
+**Restart the server** after changing its DBC files.
 
-## 5. Le client
+## 5. The client
 
-**Fermez le jeu d'abord** : il garde le patch ouvert.
+**Close the game first**: it keeps the patch open.
 
-1. Copiez `patch-ZO.MPQ` dans le dossier `Data` du client.
-2. Copiez `addon/Barde` dans `Interface\AddOns` du client.
-3. Lancez le jeu. Un fichier d'addon ajouté ou un `.toc` modifié demande de **quitter complètement le jeu** puis de le relancer : un `/reload` ne relit pas la liste des fichiers.
+1. Copy `patch-ZO.MPQ` into the client's `Data` folder.
+2. Copy `addon/Barde` into the client's `Interface\AddOns`.
+3. Start the game. A new addon file or a changed `.toc` requires **fully quitting the game** and starting it again: a `/reload` does not re-read the file list.
 
-Les sons (`addon/Barde/Sounds`) et les textures sont déjà fournis. Pour les régénérer : `python tools/gen_instrument_sounds.py addon/Barde/Sounds` et `python tools/gen_textures.py addon/Barde/Textures`.
+The sounds (`addon/Barde/Sounds`) and textures are already provided. To regenerate them: `python tools/gen_instrument_sounds.py addon/Barde/Sounds` and `python tools/gen_textures.py addon/Barde/Textures`.
 
-## 6. Vérifier que tout marche
+## 6. Check that everything works
 
-En jeu, avec un compte MJ :
+In game, with a GM account:
 
-1. `.barde luth` : un Luth de cuivre arrive dans le sac, avec son icône.
-2. Apprenez le métier : par le formateur (Livre des artisans, « Apprenti barde ») ou avec `.barde apprendre`, puis cliquez sur « Barde » dans le grimoire (ou tapez `/barde`).
-3. Choisissez un air, « Jouer » : les notes descendent, jouez avec D F J K, le chant arrive en fin de morceau.
-4. `.barde competence 300` puis `.barde instruments 4 3` donnent la compétence maximale et les instruments d'arcanite épiques pour essayer l'atelier, les spécialités et la quête légendaire.
+1. `.barde luth`: a Copper Lute arrives in your bag, with its icon.
+2. Learn the profession: from the trainer (Crafting book, "Apprenti barde") or with `.barde apprendre`, then click "Barde" in the spellbook (or type `/barde`).
+3. Pick a song, "Play": the notes fall, play with D F J K, the chant arrives at the end of the song.
+4. `.barde competence 300` then `.barde instruments 4 3` give maximum skill and epic arcanite instruments to try the workshop, the specialties and the legendary quest.
 
-## Commandes MJ
+## GM commands
 
-| Commande | Accès | Effet |
+| Command | Access | Effect |
 |---|---|---|
-| `.barde airs` | joueur | liste les airs |
-| `.barde jouer <n> [entrainement]` | joueur | lance un air |
-| `.barde luth` | MJ | donne le Luth de cuivre |
-| `.barde instruments [palier] [qualité]` | MJ | donne les instruments (palier 0 à 4, qualité 0 à 4) |
-| `.barde competence <valeur>` | MJ | fixe la compétence de barde |
-| `.barde apprendre` | MJ | enseigne le métier de barde au joueur ciblé (ou à soi) |
-| `.barde duo <air> [justesse %]` | MJ | duo de test avec un partenaire virtuel |
-| `.barde legende tout` / `reset` | MJ | valide ou efface les étapes de la quête légendaire (essais) |
-| `.barde aura <1 à 7>`, `.barde pose <1 à 3>` | MJ | essais de l'aura et des danses |
-| `.barde recharger` | admin | recharge les airs et instruments depuis la base |
+| `.barde airs` | player | lists the songs |
+| `.barde jouer <n> [entrainement]` | player | starts a song |
+| `.barde luth` | GM | gives the Copper Lute |
+| `.barde instruments [tier] [quality]` | GM | gives the instruments (tier 0 to 4, quality 0 to 4) |
+| `.barde competence <value>` | GM | sets the bard skill |
+| `.barde apprendre` | GM | teaches the bard profession to the target (or yourself) |
+| `.barde duo <song> [accuracy %]` | GM | test duo with a virtual partner |
+| `.barde legende tout` / `reset` | GM | validates or clears the legendary quest steps (testing) |
+| `.barde aura <1-7>`, `.barde pose <1-3>` | GM | tests the aura and the dances |
+| `.barde recharger` | admin | reloads songs and instruments from the database |
 
-## En cas de problème
+## Troubleshooting
 
-- **Une fenêtre d'erreur « Interface\AddOns\Barde\... »** : quittez complètement le jeu et relancez-le (fichier d'addon nouveau), puis envoyez le texte de l'erreur.
-- **Des objets ou des icônes manquants (« ? »)** : le patch client n'est pas chargé. Vérifiez qu'il est dans `Data`, que son nom passe après les autres patchs, et que le jeu a été relancé.
-- **Le serveur refuse de démarrer sur un numéro déjà pris** : changez le numéro, dans `tools/barde_dbc.py` et le SQL, et rejouez.
-- **Un objet reçu n'apparaît pas dans le sac** : repassez par l'écran des personnages et reconnectez-vous.
-- **« patch-ZO.MPQ » ne peut pas être copié** : le jeu est ouvert.
-- **Une erreur de version MySQL à la compilation** : voir `scripts/windows/mysql-version.patch`, un contournement propre à un serveur précis.
+- **An "Interface\AddOns\Barde\..." error window**: fully quit the game and start it again (new addon file), then send the error text.
+- **Missing items or icons ("?")**: the client patch is not loaded. Check it is in `Data`, that its name sorts after the other patches, and that the game was restarted.
+- **The server refuses to start on an id already taken**: change the id in `tools/barde_dbc.py` and in the SQL, and replay.
+- **An item you just received does not show in your bag**: go back to the character screen and log in again.
+- **"patch-ZO.MPQ" cannot be copied**: the game is open.
+- **A MySQL version error at build time**: see `scripts/windows/mysql-version.patch`, a workaround specific to one server.

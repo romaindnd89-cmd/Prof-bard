@@ -7,6 +7,6 @@ Ce sont les scripts qui ont servi à compiler et installer le module sur le post
 - `COPIER_SERVEUR.bat` : fait une copie du serveur d'origine pour y installer le module.
 - `mysql-version.patch` : contournement propre à un serveur précis (version de libmysql).
 
-Le manuel général est dans [INSTALL.md](../../INSTALL.md).
+Le manuel général est dans [INSTALL.md](../../INSTALL.md) (anglais) et [INSTALL.fr.md](../../INSTALL.fr.md) (français).
 
 These are the scripts used to build and install the module on the development machine. They contain paths specific to that machine: **adapt them** before running; they are only an example.
