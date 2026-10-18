@@ -1,15 +1,22 @@
 # mod-barde
 
+**English** · [Français](#français)
+
+*A bard profession for AzerothCore (WoW 3.3.5) · Un métier de barde pour AzerothCore (WoW 3.3.5)*
+
+---
+
+## English
+
 A **bard** profession for AzerothCore (WoW 3.3.5): play songs in a rhythm mini-game to earn chants (buffs), alone or together, craft your own instruments, give concerts, and climb a prestige ladder up to a legendary instrument.
 
-*Français : [README.fr.md](README.fr.md).*
 
 - **Installation guide (English)**: [INSTALL.md](INSTALL.md) (français : [INSTALL.fr.md](INSTALL.fr.md))
 - Everything the profession brings (announcement text): [ANNONCE-DISCORD.md](ANNONCE-DISCORD.md)
 - Chant values: [docs/valeurs-des-buffs.md](docs/valeurs-des-buffs.md) (French)
 - Per-version design notes: [docs/](docs/) (French)
 
-## Quick install
+### Quick install
 
 Full guide: [INSTALL.md](INSTALL.md). In short:
 
@@ -20,7 +27,7 @@ Full guide: [INSTALL.md](INSTALL.md). In short:
 5. Copy `addon/Barde` into the client's `Interface/AddOns`, **fully restart the game** (a `/reload` is not enough for new addon files).
 6. In game as a GM: `.barde luth`, `.barde apprendre`, then `/barde`.
 
-## How it works
+### How it works
 
 The rhythm game runs on the player's PC, in the `Barde` addon, because network lag would make it unplayable if the server judged it. The server trusts nothing:
 
@@ -29,7 +36,7 @@ The rhythm game runs on the player's PC, in the `Barde` addon, because network l
 3. The addon plays the song (keys D F J K) and sends back the totals: perfect, good, missed, holds, combo, score.
 4. The server rejects any impossible result (duration, note totals, combo, score), computes the accuracy itself, then applies the chant.
 
-## Repository layout
+### Repository layout
 
 | Path | Purpose |
 |---|---|
@@ -41,16 +48,76 @@ The rhythm game runs on the player's PC, in the `Barde` addon, because network l
 | `scripts/windows/` | The scripts that build and install on Windows (adapt the paths). |
 | `docs/` | Design notes by version (French). |
 
-## Requirements
+### Requirements
 
 - An AzerothCore (3.3.5a) server that you build yourself, with static modules.
 - Python 3 (no external library) for the tools.
 - Your server's `Spell.dbc`, `Item.dbc`, `SpellItemEnchantment.dbc`, `AnimationData.dbc` and `CharTitles.dbc`: the tools add the bard's rows and build the client patch `patch-ZO.MPQ`. **These files contain game data and are not in this repository**; everyone generates the patch from their own copies.
 
-## Compatibility
+### Compatibility
 
 Developed and tested on a CoA server (AzerothCore, 3.3.5 client). The ids used are reserved in the 1950xxx range (spells, items) and 1950501 to 1950504 (enchantments): check that they are free on your server. The trainers and the models used by some items are this server's: see [INSTALL.md](INSTALL.md) to adapt them.
 
-## License
+### License
 
 GNU Affero General Public License v3.0, like AzerothCore. See `LICENSE`.
+
+---
+
+## Français
+
+[English](#english) · **Français**
+
+Un métier de **barde** pour AzerothCore (WoW 3.3.5) : on joue des airs dans un mini-jeu de rythme pour obtenir des chants (des améliorations), seul ou à plusieurs, on fabrique ses instruments, on donne des concerts et on gravit un prestige jusqu'à un instrument légendaire.
+
+
+- Installation : [INSTALL.fr.md](INSTALL.fr.md) (English: [INSTALL.md](INSTALL.md))
+- Tout ce que le métier apporte (texte d'annonce) : [ANNONCE-DISCORD.md](ANNONCE-DISCORD.md)
+- Valeurs des chants : [docs/valeurs-des-buffs.md](docs/valeurs-des-buffs.md)
+- Détail par version : [docs/](docs/) (`v0.3-ensemble`, `v0.4-atelier`, `v0.5-scene`, `v0.6-creation`, `v1.0-prestige`)
+
+### Installation rapide
+
+Manuel complet : [INSTALL.fr.md](INSTALL.fr.md) (anglais : [INSTALL.md](INSTALL.md)). En bref :
+
+1. Placez le module dans les sources d'AzerothCore sous `modules/mod-barde` (le nom du dossier compte) et compilez avec `-DMODULES=static`.
+2. Appliquez `data/sql/db-world/*.sql` à la base world et `data/sql/db-characters/mod_barde_characters.sql` à la base characters.
+3. Copiez `conf/mod_barde.conf.dist` en `mod_barde.conf` dans le dossier de configuration des modules.
+4. Lancez `python tools/barde_dbc.py <Data/dbc du serveur> <sortie>/patch-ZO.MPQ`, redémarrez le serveur, copiez le patch dans le dossier `Data` du client.
+5. Copiez `addon/Barde` dans `Interface/AddOns` du client, puis **quittez complètement le jeu** et relancez-le (un `/reload` ne suffit pas pour un nouveau fichier d'addon).
+6. En jeu, avec un compte MJ : `.barde luth`, `.barde apprendre`, puis `/barde`.
+
+### Comment ça marche
+
+Le jeu de rythme tourne sur le PC du joueur, dans l'addon `Barde`, parce que le décalage réseau le rendrait injouable s'il était jugé par le serveur. Le serveur, lui, ne fait confiance à rien :
+
+1. Le joueur ouvre le carnet (`/barde`) et choisit un air et un instrument.
+2. Le serveur vérifie qu'il peut jouer (instrument, compétence, état), envoie la partition à l'addon par message d'addon (préfixe `BARDE`) et note l'heure.
+3. L'addon fait jouer le morceau (touches D F J K) et renvoie les totaux : parfaits, bons, ratés, tenues, combo, score.
+4. Le serveur refuse tout résultat impossible (durée, totaux de notes, combo, score), calcule lui-même la justesse, puis applique le chant.
+
+### Contenu du dépôt
+
+| Chemin | Rôle |
+|---|---|
+| `src/` | Le module C++ (AzerothCore) : airs, sessions, chants, atelier, camp, concerts, duels, ensembles, compositions, titres, spécialités, quête légendaire. |
+| `conf/mod_barde.conf.dist` | Tous les réglages et leurs valeurs par défaut. |
+| `data/sql/db-world/`, `data/sql/db-characters/` | Les tables et les données (airs, instruments, paliers, formateur, objets, camp). |
+| `addon/Barde/` | L'addon de jeu (Lua 5.1, API 3.3.5), à copier dans `Interface\AddOns` du client. Sons et textures sont générés par les outils. |
+| `tools/` | Les générateurs : DBC et patch client (`barde_dbc.py`), SQL des instruments et des airs, sons, textures, traductions de l'addon. |
+| `scripts/windows/` | Les scripts qui compilent et installent sous Windows (à adapter à vos chemins). |
+| `docs/` | La conception, par version. |
+
+### Prérequis
+
+- Un serveur AzerothCore (3.3.5a) que vous compilez vous-même, avec les modules statiques.
+- Python 3 (aucune bibliothèque externe) pour les outils.
+- Les fichiers `Spell.dbc`, `Item.dbc`, `SpellItemEnchantment.dbc`, `AnimationData.dbc` et `CharTitles.dbc` de votre serveur : les outils y ajoutent les lignes du barde et fabriquent le patch client `patch-ZO.MPQ`. **Ces fichiers contiennent des données du jeu : ils ne sont pas dans ce dépôt**, chacun les génère à partir des siens.
+
+### Compatibilité
+
+Développé et testé sur un serveur CoA (AzerothCore, client 3.3.5). Les identifiants utilisés sont réservés dans la plage 1950xxx (sorts, objets) et 1950501 à 1950504 (améliorations) : vérifiez qu'ils sont libres chez vous. Les formateurs et les modèles utilisés par certains objets sont ceux de ce serveur : voir [INSTALL.fr.md](INSTALL.fr.md) pour les adapter.
+
+### Licence
+
+GNU Affero General Public License v3.0, comme AzerothCore. Voir `LICENSE`.
