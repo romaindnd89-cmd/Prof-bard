@@ -10,6 +10,20 @@ You work in three places: the **server** (module, database, DBC, configuration),
 
 If you run a "CoA Server" from the manager (folders `Core`, `Data`, `mysql`, `Scripts`), `scripts/windows/INSTALLER.bat` does steps 2 to 5 below for you (database, configuration, DBC and client patch, addon). You still need a `worldserver.exe` built with the module: download it from the [Releases](https://github.com/romaindnd89-cmd/Prof-bard/releases/latest) (built for core `b95c4368`), or build it yourself (step 1). See [scripts/windows/LISEZ-MOI.md](scripts/windows/LISEZ-MOI.md).
 
+## Updating
+
+If you already installed the profession, update by running the installer of the latest version again. It can be replayed safely.
+
+1. **Close the game** and make a copy of your server folder.
+2. Download the latest zip (this link always gives the newest version): <https://github.com/romaindnd89-cmd/Prof-bard/releases/latest/download/Prof-bard-installateur-CoA.zip>
+3. **Unzip it into your game folder, replacing the existing files.**
+4. Double-click `INSTALLER.bat`, type **O** if the server shown is the right one, and wait for "TERMINE / DONE" and "ready".
+5. Fully restart the game (a `/reload` is not enough) and choose the **Solo** connection in the CoA launcher.
+
+It replaces the server program, the profession's data in the database, the addon and the client patch. **Your characters and their progress are kept** (skill, mastered songs, compositions, titles, specialty, legendary quest). Your `mod_barde.conf` is **not overwritten** if it exists: new settings of a later version keep their default value, and are listed in `conf/mod_barde.conf.dist`.
+
+To be told about new versions, click **Watch → Custom → Releases** at the top of this repository: you get an e-mail for each release. This update procedure has not yet been tested on a server installed by an earlier release: if something goes wrong, open an issue with the message shown in the black window.
+
 ## 0. Before you start
 
 - **Back up** your databases (`acore_world`, `acore_characters`) and the server's `Data/dbc` folder. The DBC script keeps its own `*.pre-barde` copy of every file it changes, but a full backup is still wise.

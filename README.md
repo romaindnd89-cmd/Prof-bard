@@ -30,6 +30,20 @@ Full guide: [INSTALL.md](INSTALL.md). In short:
 5. Copy `addon/Barde` into the client's `Interface/AddOns`, **fully restart the game** (a `/reload` is not enough for new addon files).
 6. In game as a GM: `.barde luth`, `.barde apprendre`, then `/barde`.
 
+### Updating
+
+If you already installed the profession, update by running the installer of the latest version again. It can be replayed safely.
+
+1. **Close the game** and make a copy of your server folder.
+2. Download the latest zip (this link always gives the newest version): <https://github.com/romaindnd89-cmd/Prof-bard/releases/latest/download/Prof-bard-installateur-CoA.zip>
+3. **Unzip it into your game folder, replacing the existing files.**
+4. Double-click `INSTALLER.bat`, type **O** if the server shown is the right one, and wait for "TERMINE / DONE" and "ready".
+5. Fully restart the game (a `/reload` is not enough) and choose the **Solo** connection in the CoA launcher.
+
+It replaces the server program, the profession's data in the database, the addon and the client patch. **Your characters and their progress are kept** (skill, mastered songs, compositions, titles, specialty, legendary quest). Your `mod_barde.conf` is **not overwritten** if it exists: new settings of a later version keep their default value, and are listed in `conf/mod_barde.conf.dist`.
+
+To be told about new versions, click **Watch → Custom → Releases** at the top of this repository: you get an e-mail for each release. This update procedure has not yet been tested on a server installed by an earlier release: if something goes wrong, open an issue with the message shown in the black window.
+
 ### How it works
 
 The rhythm game runs on the player's PC, in the `Barde` addon, because network lag would make it unplayable if the server judged it. The server trusts nothing:
@@ -92,6 +106,20 @@ Manuel complet : [INSTALL.fr.md](INSTALL.fr.md) (anglais : [INSTALL.md](INSTALL.
 4. Lancez `python tools/barde_dbc.py <Data/dbc du serveur> <sortie>/patch-ZO.MPQ`, redémarrez le serveur, copiez le patch dans le dossier `Data` du client.
 5. Copiez `addon/Barde` dans `Interface/AddOns` du client, puis **quittez complètement le jeu** et relancez-le (un `/reload` ne suffit pas pour un nouveau fichier d'addon).
 6. En jeu, avec un compte MJ : `.barde luth`, `.barde apprendre`, puis `/barde`.
+
+### Mettre à jour
+
+Si vous avez déjà installé le métier, mettez-le à jour en relançant l'installateur de la dernière version. Il se rejoue sans danger.
+
+1. **Fermez le jeu** et faites une copie de votre dossier serveur.
+2. Téléchargez le dernier zip (ce lien donne toujours la version la plus récente) : <https://github.com/romaindnd89-cmd/Prof-bard/releases/latest/download/Prof-bard-installateur-CoA.zip>
+3. **Décompressez-le dans votre dossier de jeu, en remplaçant les fichiers existants.**
+4. Double-cliquez sur `INSTALLER.bat`, tapez **O** si le serveur proposé est le bon, puis attendez « TERMINE / DONE » et « ready ».
+5. Relancez complètement le jeu (un `/reload` ne suffit pas) et choisissez la connexion **Solo** dans le lanceur CoA.
+
+Il remplace le programme du serveur, les données du métier dans la base, l'addon et le patch du client. **Vos personnages et leur progression sont conservés** (compétence, airs maîtrisés, compositions, titres, spécialité, quête légendaire). Votre `mod_barde.conf` n'est **pas écrasé** s'il existe : les nouveaux réglages d'une version suivante gardent leur valeur par défaut, et sont listés dans `conf/mod_barde.conf.dist`.
+
+Pour être prévenu des nouvelles versions, cliquez sur **Watch → Custom → Releases** en haut du dépôt : vous recevez un e-mail à chaque publication. Cette procédure de mise à jour n'a pas encore été testée sur un serveur installé par une version précédente : si quelque chose ne va pas, ouvrez un ticket (« Issue ») avec le message affiché dans la fenêtre noire.
 
 ### Comment ça marche
 

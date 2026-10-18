@@ -10,6 +10,20 @@ Il faut intervenir à trois endroits : le **serveur** (module, base de données,
 
 Si vous avez un « CoA Server » du gestionnaire (dossiers `Core`, `Data`, `mysql`, `Scripts`), `scripts/windows/INSTALLER.bat` fait les étapes 2 à 5 ci-dessous à votre place (base de données, configuration, DBC et patch client, addon). Il faut quand même un `worldserver.exe` compilé avec le module : téléchargez-le dans les [Releases](https://github.com/romaindnd89-cmd/Prof-bard/releases/latest) (compilé pour le cœur `b95c4368`), ou compilez-le vous-même (étape 1). Voir [scripts/windows/LISEZ-MOI.md](scripts/windows/LISEZ-MOI.md).
 
+## Mettre à jour
+
+Si vous avez déjà installé le métier, mettez-le à jour en relançant l'installateur de la dernière version. Il se rejoue sans danger.
+
+1. **Fermez le jeu** et faites une copie de votre dossier serveur.
+2. Téléchargez le dernier zip (ce lien donne toujours la version la plus récente) : <https://github.com/romaindnd89-cmd/Prof-bard/releases/latest/download/Prof-bard-installateur-CoA.zip>
+3. **Décompressez-le dans votre dossier de jeu, en remplaçant les fichiers existants.**
+4. Double-cliquez sur `INSTALLER.bat`, tapez **O** si le serveur proposé est le bon, puis attendez « TERMINE / DONE » et « ready ».
+5. Relancez complètement le jeu (un `/reload` ne suffit pas) et choisissez la connexion **Solo** dans le lanceur CoA.
+
+Il remplace le programme du serveur, les données du métier dans la base, l'addon et le patch du client. **Vos personnages et leur progression sont conservés** (compétence, airs maîtrisés, compositions, titres, spécialité, quête légendaire). Votre `mod_barde.conf` n'est **pas écrasé** s'il existe : les nouveaux réglages d'une version suivante gardent leur valeur par défaut, et sont listés dans `conf/mod_barde.conf.dist`.
+
+Pour être prévenu des nouvelles versions, cliquez sur **Watch → Custom → Releases** en haut du dépôt : vous recevez un e-mail à chaque publication. Cette procédure de mise à jour n'a pas encore été testée sur un serveur installé par une version précédente : si quelque chose ne va pas, ouvrez un ticket (« Issue ») avec le message affiché dans la fenêtre noire.
+
 ## 0. Avant de commencer
 
 - Faites une **sauvegarde** de vos bases (`acore_world`, `acore_characters`) et du dossier `Data/dbc` du serveur. Le script des DBC garde de lui-même une copie `*.pre-barde` de chaque fichier qu'il modifie, mais une sauvegarde complète reste prudente.
