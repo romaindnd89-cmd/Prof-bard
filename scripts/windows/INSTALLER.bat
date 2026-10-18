@@ -17,17 +17,22 @@ pause
 rem --- Le jeu : le dossier ou ce logiciel a ete decompresse / The game: the folder this software was unzipped into
 set "CLIENT=%~dp0"
 if "%CLIENT:~-1%"=="\" set "CLIENT=%CLIENT:~0,-1%"
-if not exist "%CLIENT%\Interface" goto :askclient
 if not exist "%CLIENT%\Data" goto :askclient
-goto :clientok
+if exist "%CLIENT%\Wow.exe" goto :clientok
+if exist "%CLIENT%\WoW.exe" goto :clientok
+if exist "%CLIENT%\Ascension.exe" goto :clientok
+goto :askclient
 :askclient
 echo.
-echo  Ce logiciel doit etre decompresse dans ton dossier de jeu ^(celui qui contient Data et Interface^).
-echo  This software must be unzipped into your game folder ^(the one holding Data and Interface^).
+echo  Ce logiciel doit etre decompresse dans ton dossier de jeu ^(celui qui contient le dossier Data
+echo  et le programme du jeu, par exemple Ascension.exe ou Wow.exe^).
+echo  This software must be unzipped into your game folder ^(the one holding the Data folder
+echo  and the game program, for example Ascension.exe or Wow.exe^).
 set "CLIENT="
 set /p CLIENT=  Chemin du jeu / Game path :
+if not defined CLIENT ( echo ERREUR / ERROR : aucun chemin donne / no path given. & pause & exit /b 1 )
 set "CLIENT=%CLIENT:"=%"
-if not exist "%CLIENT%\Interface" ( echo ERREUR / ERROR : dossier de jeu introuvable. & pause & exit /b 1 )
+if not exist "%CLIENT%\Data" ( echo ERREUR / ERROR : "%CLIENT%" n'est pas un dossier de jeu ^(dossier Data introuvable^). & pause & exit /b 1 )
 :clientok
 echo.
 echo  Jeu / Game : %CLIENT%

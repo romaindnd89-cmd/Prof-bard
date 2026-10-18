@@ -7,7 +7,7 @@ $roots = Get-PSDrive -PSProvider FileSystem | ForEach-Object { $_.Root } | Where
 
 function Test-Serveur($dir) { Test-Path (Join-Path $dir "Scripts\manage.py") }
 function Test-Jeu($dir) {
-    (Test-Path (Join-Path $dir "Data")) -and (Test-Path (Join-Path $dir "Interface")) -and
+    (Test-Path (Join-Path $dir "Data")) -and
     ((Test-Path (Join-Path $dir "Wow.exe")) -or (Test-Path (Join-Path $dir "WoW.exe")) -or (Test-Path (Join-Path $dir "Ascension.exe")))
 }
 

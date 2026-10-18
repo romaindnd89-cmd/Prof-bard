@@ -35,7 +35,7 @@ def main() -> None:
     mysql = repack / "mysql/bin/mysql.exe"
     login = f"--defaults-extra-file={repack / 'mysql/admin-client.ini'}"
 
-    for required in (python, manage, build / "worldserver.exe", module / "data/sql", client / "Interface"):
+    for required in (python, manage, build / "worldserver.exe", module / "data/sql", client / "Data"):
         if not required.exists():
             raise RuntimeError(f"introuvable : {required}")
 
@@ -78,6 +78,7 @@ def main() -> None:
             print(f"      {database} <- {sql.name}")
 
     print("[6/7] Addon et patch client...")
+    (client / "Interface/AddOns").mkdir(parents=True, exist_ok=True)       # a fresh client has no Interface folder yet
     target = client / "Interface/AddOns/Barde"
     if target.exists():
         shutil.rmtree(target)
