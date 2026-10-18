@@ -63,19 +63,22 @@ set "REPACK="
 echo.
 echo  Recherche de ton serveur CoA ^(peut prendre une minute^)... / Looking for your CoA server ^(may take a minute^)...
 for /f "usebackq delims=" %%i in (`powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0trouver.ps1" serveur`) do set "REPACK=%%i"
-if defined REPACK (
-  echo  Serveur trouve / Server found : %REPACK%
-  set "OK="
-  set /p OK=  C'est le bon ? / Is it the right one? [O/Y = oui, N = non] :
-  if /i "%OK%"=="N" set "REPACK="
-)
-if not defined REPACK (
-  echo.
-  echo  Donne le dossier du serveur : celui qui contient Core, Data, mysql et Scripts.
-  echo  Give the server folder: the one holding Core, Data, mysql and Scripts.
-  set /p REPACK=  Chemin / Path :
-)
+if not defined REPACK goto :askrepack
+echo  Serveur trouve / Server found : %REPACK%
+echo  ATTENTION : le metier sera installe sur CE serveur. / WARNING: the profession will be installed on THIS server.
+set "OK="
+set /p OK=  C'est le bon ? Tape O ^(oui^) pour continuer, autre chose pour choisir un autre dossier :
+if /i "%OK%"=="O" goto :repackok
+if /i "%OK%"=="Y" goto :repackok
+:askrepack
+set "REPACK="
+echo.
+echo  Donne le dossier du serveur : celui qui contient Core, Data, mysql et Scripts.
+echo  Give the server folder: the one holding Core, Data, mysql and Scripts.
+set /p REPACK=  Chemin / Path :
+if not defined REPACK ( echo ERREUR / ERROR : aucun chemin donne / no path given. & pause & exit /b 1 )
 set "REPACK=%REPACK:"=%"
+:repackok
 
 if not defined BUILD (
   echo.
