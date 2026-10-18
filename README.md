@@ -19,7 +19,7 @@ A **bard** profession for AzerothCore (WoW 3.3.5): play songs in a rhythm mini-g
 
 ### Quick install
 
-**CoA Server users (Windows): download `Prof-bard-installateur-CoA.zip` from the [Releases](https://github.com/romaindnd89-cmd/Prof-bard/releases/latest), unzip its content into your game folder (the one holding `Data`) and double-click `INSTALLER.bat`.** It installs the profession on your local server and into your game (for core `b95c4368`). In the CoA launcher, choose the **Solo** connection (your own local server) before starting the game, then in game with a GM account type `.barde apprendre` and `/barde`.
+**CoA Server users (Windows): download `Prof-bard-installateur-CoA.zip` from the [Releases](https://github.com/romaindnd89-cmd/Prof-bard/releases/latest), unzip its content into your game folder (the one holding `Data`) and double-click `INSTALLER.bat`.** It installs the profession on your local server and into your game (for core `b95c4368`). In the CoA launcher, choose the **Solo** connection (your own local server) before starting the game, then in game learn the profession (any player: **Book of Artisans** → "Apprenti barde", free; or, with a GM account, `.barde apprendre`), then type `/barde`.
 
 <details>
 <summary><b>Another AzerothCore server? Manual installation (advanced)</b></summary>
@@ -101,7 +101,7 @@ Un métier de **barde** pour AzerothCore (WoW 3.3.5) : on joue des airs dans un 
 
 ### Installation rapide
 
-**Utilisateurs d'un CoA Server (Windows) : téléchargez `Prof-bard-installateur-CoA.zip` dans les [Releases](https://github.com/romaindnd89-cmd/Prof-bard/releases/latest), décompressez son contenu dans votre dossier de jeu (celui qui contient `Data`) et double-cliquez sur `INSTALLER.bat`.** Il installe le métier sur votre serveur local et dans votre jeu (pour le cœur `b95c4368`). Dans le lanceur CoA, choisissez la connexion **Solo** (votre propre serveur local) avant de lancer le jeu, puis en jeu avec un compte MJ tapez `.barde apprendre` et `/barde`.
+**Utilisateurs d'un CoA Server (Windows) : téléchargez `Prof-bard-installateur-CoA.zip` dans les [Releases](https://github.com/romaindnd89-cmd/Prof-bard/releases/latest), décompressez son contenu dans votre dossier de jeu (celui qui contient `Data`) et double-cliquez sur `INSTALLER.bat`.** Il installe le métier sur votre serveur local et dans votre jeu (pour le cœur `b95c4368`). Dans le lanceur CoA, choisissez la connexion **Solo** (votre propre serveur local) avant de lancer le jeu, puis en jeu apprenez le métier (tout joueur : **Livre des artisans** → « Apprenti barde », gratuit ; ou, avec un compte MJ, `.barde apprendre`), puis tapez `/barde`.
 
 <details>
 <summary><b>Un autre serveur AzerothCore ? Installation manuelle (avancé)</b></summary>

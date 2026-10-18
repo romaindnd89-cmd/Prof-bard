@@ -8,6 +8,10 @@ Toutes les commandes serveur commencent par `.barde` (à taper dans le chat du j
 
 ## Français
 
+### Apprendre le métier
+
+**Tout joueur peut l'apprendre sans aucune commande** : ouvrir le **Livre des artisans** (la fenêtre des métiers) et apprendre le sort **« Apprenti barde »** (gratuit, sans niveau requis). Il apparaît en tête de la liste, car son nom commence par « Apprenti ». Le sort « Barde » arrive alors dans le grimoire : un clic dessus (ou `/barde`) ouvre le carnet. La commande `.barde apprendre` n'est qu'un **raccourci de MJ**.
+
 ### Commandes du serveur (`.barde ...`)
 
 | Commande | Accès | Ce qu'elle fait |
@@ -16,7 +20,7 @@ Toutes les commandes serveur commencent par `.barde` (à taper dans le chat du j
 | `.barde jouer <n> [entrainement]` | joueur | Lance l'air numéro `n` avec le luth (le carnet de l'addon doit être installé). Avec `entrainement` : sans malus, chant réduit. |
 | `.barde luth` | MJ | Donne un Luth de cuivre (joueur sélectionné, sinon vous). |
 | `.barde instruments [palier] [qualité]` | MJ | Donne un exemplaire de chaque instrument qu'il n'a pas encore. `palier` de 0 (cuivre) à 4 (arcanite), `qualité` de 0 (commun) à 4 (légendaire). Exemple : `.barde instruments 4 3` donne les instruments d'arcanite épiques. |
-| `.barde apprendre` | MJ | Enseigne le métier de barde (joueur sélectionné, sinon vous). |
+| `.barde apprendre` | MJ | Raccourci : enseigne le métier de barde (joueur sélectionné, sinon vous). Un joueur normal l'apprend au Livre des artisans. |
 | `.barde competence <valeur>` | MJ | Fixe la compétence de barde, de 1 au maximum du serveur (300 par défaut). Exemple : `.barde competence 300`. |
 | `.barde duo <air> [justesse]` | MJ | Lance un duo de test avec un **partenaire virtuel** (pas besoin d'un second joueur). `justesse` en pourcentage (exemple : `.barde duo 1 90`). |
 | `.barde legende tout` | MJ | **Pour les essais** : valide d'un coup les étapes de la quête légendaire (or et 100 % sur les airs du carnet, duel, trio). Les matériaux se remettent en jeu. |
@@ -43,7 +47,7 @@ Les commandes `luth`, `instruments`, `apprendre`, `competence` et `legende` s'ap
 
 | Fonction à tester | Comment |
 |---|---|
-| Jouer un air | `.barde apprendre`, `.barde luth`, puis `/barde`, choisir un air, « Jouer ». |
+| Jouer un air | Apprendre le métier (Livre des artisans, ou `.barde apprendre`), `.barde luth`, puis `/barde`, choisir un air, « Jouer ». |
 | Atelier, qualités, accordage | `.barde competence 300`, puis l'Atelier. Pour des instruments déjà faits : `.barde instruments 4 3`. |
 | Camp de barde | Atelier → onglet « Accordage » → « Fabriquer un camp ». Matériaux : `.additem 2592 4` (laine), `.additem 2319 2` (cuir moyen), `.additem 4471 1` (silex et amadou). |
 | Jouer ensemble (duo) | `.barde duo 1` (partenaire virtuel), ou deux comptes dans un même groupe. La fenêtre de préparation s'ouvre. |
@@ -62,6 +66,10 @@ Les commandes `.additem` et `.modify money` sont des commandes du jeu (MJ), pas 
 
 All server commands start with `.barde` (typed in the in-game chat). Game-master (GM) commands need an account with GM rights; on a CoA server the manager's "Comptes" (accounts) tab sets an account's level.
 
+### Learning the profession
+
+**Any player can learn it without any command**: open the **Book of Artisans** (the professions window) and learn the spell **"Apprenti barde"** (free, no level required). It shows at the top of the list, because its name starts with "Apprenti". The "Barde" spell then arrives in the spellbook: a click on it (or `/barde`) opens the songbook. The `.barde apprendre` command is only a **GM shortcut**.
+
 ### Server commands (`.barde ...`)
 
 | Command | Access | What it does |
@@ -70,7 +78,7 @@ All server commands start with `.barde` (typed in the in-game chat). Game-master
 | `.barde jouer <n> [entrainement]` | player | Starts song number `n` with the lute (the addon's songbook must be installed). With `entrainement`: no malus, reduced chant. |
 | `.barde luth` | GM | Gives a Copper Lute (selected player, otherwise yourself). |
 | `.barde instruments [tier] [quality]` | GM | Gives one of each instrument not yet owned. `tier` from 0 (copper) to 4 (arcanite), `quality` from 0 (common) to 4 (legendary). Example: `.barde instruments 4 3` gives the epic arcanite instruments. |
-| `.barde apprendre` | GM | Teaches the bard profession (selected player, otherwise yourself). |
+| `.barde apprendre` | GM | Shortcut: teaches the bard profession (selected player, otherwise yourself). A normal player learns it from the Book of Artisans. |
 | `.barde competence <value>` | GM | Sets the bard skill, from 1 to the server maximum (300 by default). Example: `.barde competence 300`. |
 | `.barde duo <song> [accuracy]` | GM | Starts a test duo with a **virtual partner** (no second player needed). `accuracy` in percent (example: `.barde duo 1 90`). |
 | `.barde legende tout` | GM | **For testing**: validates the legendary quest steps at once (gold and 100 % on the book's songs, duel, trio). The materials are still handed in in game. |
@@ -97,7 +105,7 @@ The `luth`, `instruments`, `apprendre`, `competence` and `legende` commands appl
 
 | Feature to test | How |
 |---|---|
-| Playing a song | `.barde apprendre`, `.barde luth`, then `/barde`, pick a song, "Play". |
+| Playing a song | Learn the profession (Book of Artisans, or `.barde apprendre`), `.barde luth`, then `/barde`, pick a song, "Play". |
 | Workshop, qualities, tuning | `.barde competence 300`, then the Workshop. For ready-made instruments: `.barde instruments 4 3`. |
 | Bard camp | Workshop → "Accordage" (tuning) tab → "Fabriquer un camp" (craft a camp). Materials: `.additem 2592 4` (wool), `.additem 2319 2` (medium leather), `.additem 4471 1` (flint and tinder). |
 | Playing together (duo) | `.barde duo 1` (virtual partner), or two accounts in the same group. The preparation window opens. |
