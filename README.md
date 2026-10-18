@@ -49,6 +49,30 @@ It replaces the server program, the profession's data in the database, the addon
 
 To be told about new versions, click **Watch → Custom → Releases** at the top of this repository: you get an e-mail for each release. This update procedure has not yet been tested on a server installed by an earlier release: if something goes wrong, open an issue with the message shown in the black window.
 
+### Commands
+
+**Learning the profession:** any player opens the **Book of Artisans** and learns **"Apprenti barde"** (free). `.barde apprendre` is only a GM shortcut.
+
+**Server commands** (type them in the in-game chat; GM commands need an account with GM rights):
+
+| Command | Access | What it does |
+|---|---|---|
+| `.barde airs` | player | Lists the songbook's songs. |
+| `.barde jouer <n> [entrainement]` | player | Starts song `n` with the lute (`entrainement`: no malus, reduced chant). |
+| `.barde luth` | GM | Gives a Copper Lute (selected player, otherwise yourself). |
+| `.barde instruments [tier] [quality]` | GM | Gives one of each instrument. Tier 0 (copper) to 4 (arcanite), quality 0 to 4. Example: `.barde instruments 4 3` = epic arcanite instruments. |
+| `.barde apprendre` | GM | Shortcut: teaches the profession. |
+| `.barde competence <value>` | GM | Sets the bard skill (1 to 300). |
+| `.barde duo <song> [accuracy]` | GM | Test duo with a virtual partner (example: `.barde duo 1 90`). |
+| `.barde legende tout` / `reset` | GM | Validates / clears the legendary quest steps (testing). |
+| `.barde aura <1-7>` | GM | Shows one of the seven play-aura looks for 20 s. |
+| `.barde pose <1-3>` | GM | Instrument in hand with a dance for 25 s (`0` stops). |
+| `.barde recharger` | admin | Reloads songs, instruments and compositions from the database, without a restart. |
+
+**Addon commands** (every player): `/barde` (songbook), `/barde improviser`, `/barde atelier`, `/barde lang fr|en`, `/barde ecoute` (mute nearby bards), `/barde auto [accuracy]` (GM, self-playing test), `/applaud` (applaud near a concert's purse).
+
+The full list, with a **test recipe for every feature** (workshop, camp, duo, concert, scrolls, specialties, legendary quest), is in [COMMANDES-MJ.md](COMMANDES-MJ.md).
+
 ### How it works
 
 The rhythm game runs on the player's PC, in the `Barde` addon, because network lag would make it unplayable if the server judged it. The server trusts nothing:
@@ -130,6 +154,30 @@ Si vous avez déjà installé le métier, mettez-le à jour en relançant l'inst
 Il remplace le programme du serveur, les données du métier dans la base, l'addon et le patch du client. **Vos personnages et leur progression sont conservés** (compétence, airs maîtrisés, compositions, titres, spécialité, quête légendaire). Votre `mod_barde.conf` n'est **pas écrasé** s'il existe : les nouveaux réglages d'une version suivante gardent leur valeur par défaut, et sont listés dans `conf/mod_barde.conf.dist`.
 
 Pour être prévenu des nouvelles versions, cliquez sur **Watch → Custom → Releases** en haut du dépôt : vous recevez un e-mail à chaque publication. Cette procédure de mise à jour n'a pas encore été testée sur un serveur installé par une version précédente : si quelque chose ne va pas, ouvrez un ticket (« Issue ») avec le message affiché dans la fenêtre noire.
+
+### Commandes
+
+**Apprendre le métier :** tout joueur ouvre le **Livre des artisans** et apprend **« Apprenti barde »** (gratuit). `.barde apprendre` n'est qu'un raccourci de MJ.
+
+**Commandes du serveur** (à taper dans le chat du jeu ; les commandes MJ demandent un compte avec les droits MJ) :
+
+| Commande | Accès | Ce qu'elle fait |
+|---|---|---|
+| `.barde airs` | joueur | Liste les airs du carnet. |
+| `.barde jouer <n> [entrainement]` | joueur | Lance l'air `n` avec le luth (`entrainement` : sans malus, chant réduit). |
+| `.barde luth` | MJ | Donne un Luth de cuivre (joueur sélectionné, sinon vous). |
+| `.barde instruments [palier] [qualité]` | MJ | Donne un exemplaire de chaque instrument. Palier 0 (cuivre) à 4 (arcanite), qualité 0 à 4. Exemple : `.barde instruments 4 3` = instruments d'arcanite épiques. |
+| `.barde apprendre` | MJ | Raccourci : enseigne le métier. |
+| `.barde competence <valeur>` | MJ | Fixe la compétence de barde (1 à 300). |
+| `.barde duo <air> [justesse]` | MJ | Duo de test avec un partenaire virtuel (exemple : `.barde duo 1 90`). |
+| `.barde legende tout` / `reset` | MJ | Valide / efface les étapes de la quête légendaire (essais). |
+| `.barde aura <1-7>` | MJ | Montre l'une des sept apparences de l'aura de jeu pendant 20 s. |
+| `.barde pose <1-3>` | MJ | Instrument en main avec une danse pendant 25 s (`0` arrête). |
+| `.barde recharger` | admin | Recharge les airs, les instruments et les compositions depuis la base, sans redémarrer. |
+
+**Commandes de l'addon** (tous les joueurs) : `/barde` (carnet), `/barde improviser`, `/barde atelier`, `/barde lang fr|en`, `/barde ecoute` (couper les bardes proches), `/barde auto [justesse]` (MJ, essai en jeu automatique), `/applaud` (applaudir près de la bourse d'un concert).
+
+La liste complète, avec une **recette de test pour chaque fonction** (atelier, camp, duo, concert, parchemins, spécialités, quête légendaire), est dans [COMMANDES-MJ.md](COMMANDES-MJ.md).
 
 ### Comment ça marche
 
